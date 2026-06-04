@@ -1,0 +1,297 @@
+/* =========================
+   ROOT
+========================= */
+:root {
+  --primary: #2e7d32;
+  --secondary: #1b5e20;
+  --bg: #f6f8f6;
+  --card: #ffffff;
+  --text: #1a1a1a;
+  --border: #e5e7eb;
+}
+
+
+[data-theme="dark"] {
+  --bg: #121212;
+  --card: #1e1e1e;
+  --text: #f5f5f5;
+  --border: #2a2a2a;
+}
+
+/* =========================
+   RESET
+========================= */
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: 0.3s ease;
+}
+
+/* =========================
+   TOP BAR
+========================= */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+
+
+
+.actions button {
+  background: transparent;
+  border: 1px solid var(--border);
+  padding: 8px 10px;
+  margin-left: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* =========================
+   PAGE LAYOUT
+========================= */
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+}
+
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 950px;
+  width: 100%;
+  background: var(--card);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+/* =========================
+   LEFT PANEL
+========================= */
+.left {
+  background: linear-gradient(
+    135deg,
+    rgba(46,125,50,0.1),
+    rgba(46,125,50,0.03)
+  );
+  padding: 40px;
+}
+
+.left h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.left p {
+  color: #666;
+  margin-bottom: 25px;
+}
+
+[data-theme="dark"] .left p {
+  color: #bbb;
+}
+
+
+.info div {
+  margin-bottom: 12px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* =========================
+   RIGHT PANEL
+========================= */
+.right {
+  padding: 40px;
+}
+
+.right h2 {
+  margin-bottom: 20px;
+}
+
+
+.field {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--border);
+  padding: 10px 12px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  background: transparent;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--text);
+  font-size: 14px;
+}
+
+.field textarea {
+  resize: none;
+  height: 100px;
+}
+
+
+.field i {
+  color: var(--primary);
+}
+
+
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background: var(--secondary);
+  transform: translateY(-2px);
+}
+
+
+#status {
+  margin-top: 10px;
+  font-size: 13px;
+}
+
+/* =========================
+   LOGO INSIDE LEFT
+========================= */
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 900px) {
+  .card {
+    grid-template-columns: 1fr;
+  }
+
+  .left {
+    text-align: center;
+  }
+
+  .info div {
+    justify-content: center;
+  }
+}
+/* =========================
+   ACTION BUTTONS (LIGHT MODE)
+========================= */
+.actions button {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+/* =========================
+   ACTION BUTTONS (DARK MODE FIX)
+========================= */
+[data-theme="dark"] .actions button {
+  background: #1e1e1e;
+  border: 1px solid #333;
+  color: #ffffff;
+}
+
+
+.actions button:hover {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
+
+[data-theme="dark"] .actions button:hover {
+  background: var(--primary);
+  color: #fff;
+}
+/* =========================
+   MAP SECTION
+========================= */
+.map-section{
+  padding:80px 20px;
+  background:var(--bg);
+}
+
+
+.map-header{
+  text-align:center;
+  margin-bottom:30px;
+}
+
+.map-header h2{
+  font-size:34px;
+  color:var(--primary);
+  margin-bottom:10px;
+}
+
+.map-header p{
+  color:var(--text-light);
+  opacity:0.8;
+}
+
+
+.map-box{
+  width:100%;
+  overflow:hidden;
+  border-radius:20px;
+  border:1px solid var(--border);
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+
+.map-box iframe{
+  width:100%;
+  height:450px;
+  border:0;
+  display:block;
+}
+
+
+body.dark .map-section{
+  background:#121212;
+}
+
+body.dark .map-box{
+  border-color:#2a2a2a;
+}
+
+
+@media(max-width:768px){
+
+  .map-header h2{
+    font-size:28px;
+  }
+
+  .map-box iframe{
+    height:320px;
+  }
+
+}

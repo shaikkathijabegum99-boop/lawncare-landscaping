@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard | GreenScape Lawn & Landscaping</title>
+
+  <link rel="icon" href="../images/favicon.png" />
+
+  <link rel="stylesheet" href="admin.css" />
+
+
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+
+<body>
+
+<div class="dashboard-layout">
+
+  
+  <aside class="sidebar" id="sidebar">
+
+    <div class="sidebar-top">
+
+      <a href="../index.html" class="logo-box">
+
+        <div class="logo-icon">
+          <i class="fa-solid fa-leaf"></i>
+        </div>
+
+        <div class="logo-text">
+          <span class="brand-name">GREENSCAPE</span>
+          <span class="brand-subtext">LAWN & LANDSCAPING</span>
+        </div>
+
+      </a>
+
+      <button class="sidebar-close" id="sidebarClose">
+        <i class="fas fa-times"></i>
+      </button>
+
+    </div>
+
+    <nav class="sidebar-nav">
+
+      <a class="active"><i class="fas fa-chart-line"></i><span>Dashboard</span></a>
+      <a><i class="fas fa-seedling"></i><span>Projects</span></a>
+      <a><i class="fas fa-users"></i><span>Clients</span></a>
+      <a><i class="fas fa-water"></i><span>Irrigation</span></a>
+      <a><i class="fas fa-tree"></i><span>Designs</span></a>
+      <a><i class="fas fa-screwdriver-wrench"></i><span>Maintenance</span></a>
+      <a><i class="fas fa-bell"></i><span>Notifications</span></a>
+      <a><i class="fas fa-cog"></i><span>Settings</span></a>
+
+    </nav>
+
+    <div class="sidebar-bottom">
+
+      <button id="darkToggle">
+        <i class="fas fa-moon"></i>
+        <span>Dark Mode</span>
+      </button>
+
+      <button id="rtlToggle">
+        <i class="fas fa-right-left"></i>
+        <span>RTL</span>
+      </button>
+
+      <a href="#">
+        <i class="fas fa-right-from-bracket"></i>
+        <span>Logout</span>
+      </a>
+
+    </div>
+
+  </aside>
+
+  
+<main class="main-content">
+
+  
+  <header class="topbar">
+
+    <div class="topbar-left">
+      <button class="menu-toggle" id="menuToggle">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <div>
+        <h1>Admin Dashboard</h1>
+        <p>Welcome back, GreenScape Administrator</p>
+      </div>
+    </div>
+
+    <div class="topbar-right">
+
+      <button class="topbar-btn">
+        <i class="fas fa-bell"></i>
+      </button>
+
+      <button class="topbar-btn" id="darkToggle">
+        <i class="fas fa-moon"></i>
+      </button>
+
+      <button class="topbar-btn" id="rtlToggle">
+        <i class="fas fa-right-left"></i>
+      </button>
+
+      <div class="profile-box">
+        <img src="../images/team1.jpg" alt="">
+        <div>
+          <h4>Admin</h4>
+          <span>Landscape Manager</span>
+        </div>
+      </div>
+
+    </div>
+
+  </header>
+
+  
+  <section class="welcome-card">
+
+    <div>
+      <h2>🌿 GreenScape Premium Dashboard</h2>
+
+      <p>
+        Manage landscaping projects, irrigation systems,
+        maintenance schedules and client operations from one place.
+      </p>
+
+      <button class="btn-dashboard">
+        Dashboard Settings
+      </button>
+    </div>
+
+  </section>
+
+  
+  <section class="dashboard-overview">
+
+    
+    <div class="dashboard-card large-card">
+
+      <h3>Projected Revenue</h3>
+
+      <h2>$12.8K</h2>
+
+      <p>
+        Estimated revenue for the next 30 days
+      </p>
+
+      <div class="chart-bars">
+
+        <div class="bar" style="height:40%"></div>
+        <div class="bar" style="height:65%"></div>
+        <div class="bar" style="height:45%"></div>
+        <div class="bar" style="height:80%"></div>
+        <div class="bar" style="height:50%"></div>
+        <div class="bar" style="height:90%"></div>
+        <div class="bar" style="height:60%"></div>
+        <div class="bar" style="height:75%"></div>
+        <div class="bar" style="height:55%"></div>
+        <div class="bar" style="height:95%"></div>
+
+      </div>
+
+    </div>
+
+    
+    <div class="dashboard-card">
+
+      <h3>Account Standing</h3>
+
+      <div class="status-row">
+        <span>Outstanding</span>
+        <strong>$22,415</strong>
+      </div>
+
+      <div class="status-row">
+        <span>Credit</span>
+        <strong>$10,591</strong>
+      </div>
+
+      <div class="status-row">
+        <span>Paid</span>
+        <strong>$90,423</strong>
+      </div>
+
+    </div>
+
+  </section>
+
+  
+  <section class="metrics-grid">
+
+    <div class="metric-card">
+      <i class="fas fa-seedling"></i>
+      <h3>148</h3>
+      <p>Active Projects</p>
+    </div>
+
+    <div class="metric-card">
+      <i class="fas fa-users"></i>
+      <h3>328</h3>
+      <p>Clients</p>
+    </div>
+
+    <div class="metric-card">
+      <i class="fas fa-water"></i>
+      <h3>92%</h3>
+      <p>Irrigation Efficiency</p>
+    </div>
+
+    <div class="metric-card">
+      <i class="fas fa-tree"></i>
+      <h3>764</h3>
+      <p>Trees Managed</p>
+    </div>
+
+  </section>
+
+  
+  <section class="dashboard-overview">
+
+    
+    <div class="dashboard-card">
+
+      <h3>Recent Projects</h3>
+
+      <div class="project-item">
+        <img src="../images/lawn1.jpg">
+        <div>
+          <h4>Luxury Villa Garden</h4>
+          <p>Mumbai</p>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <img src="../images/lawn2.jpg">
+        <div>
+          <h4>Corporate Landscape</h4>
+          <p>Pune</p>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <img src="../images/lawn3.jpg">
+        <div>
+          <h4>Eco Resort</h4>
+          <p>Lonavala</p>
+        </div>
+      </div>
+
+    </div>
+
+    
+    <div class="dashboard-card">
+
+      <h3>Client Balances</h3>
+
+      <div class="balance-row">
+        <span>Wilson Estate</span>
+        <strong>$12,450</strong>
+      </div>
+
+      <div class="balance-row">
+        <span>Green Valley Resort</span>
+        <strong>$8,900</strong>
+      </div>
+
+      <div class="balance-row">
+        <span>City Corporate Park</span>
+        <strong>$5,400</strong>
+      </div>
+
+      <div class="balance-row">
+        <span>Sunrise Villas</span>
+        <strong>$4,150</strong>
+      </div>
+
+    </div>
+
+  </section>
+
+  
+  <section class="dashboard-card">
+
+    <h3>Landscape Performance Analytics</h3>
+
+    <div class="progress-item">
+      <div class="progress-head">
+        <span>Water Conservation</span>
+        <span>86%</span>
+      </div>
+
+      <div class="progress-bar">
+        <span style="width:86%"></span>
+      </div>
+    </div>
+
+    <div class="progress-item">
+      <div class="progress-head">
+        <span>Project Completion</span>
+        <span>72%</span>
+      </div>
+
+      <div class="progress-bar">
+        <span style="width:72%"></span>
+      </div>
+    </div>
+
+    <div class="progress-item">
+      <div class="progress-head">
+        <span>Customer Satisfaction</span>
+        <span>98%</span>
+      </div>
+
+      <div class="progress-bar">
+        <span style="width:98%"></span>
+      </div>
+    </div>
+
+  </section>
+
+</main>
+
+<script src="admin.js"></script>
+
+</body>
+</html>
