@@ -1,333 +1,356 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" data-theme="light">
-
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Admin Dashboard | GreenScape Lawn & Landscaping</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard | GreenScape</title>
 
-  <link rel="icon" href="../images/favicon.png" />
+<link rel="icon" href="../images/favicon.png">
 
-  <link rel="stylesheet" href="admin.css" />
+<link rel="stylesheet" href="../global/global.css">
+<link rel="stylesheet" href="../css/com.css">
+<link rel="stylesheet" href="admin.css">
 
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+<!-- CHART JS -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
 
 <body>
 
-<div class="dashboard-layout">
+<div class="dashboard">
 
-  
-  <aside class="sidebar" id="sidebar">
+<!-- SIDEBAR -->
 
-    <div class="sidebar-top">
+<aside class="sidebar">
 
-      <a href="../index.html" class="logo-box">
+    <!-- LOGO -->
+<a href="../index.html" class="logo-box">
 
-        <div class="logo-icon">
-          <i class="fa-solid fa-leaf"></i>
-        </div>
+  <!-- LOGO ICON -->
+  <div class="logo-icon">
+    <i class="fas fa-leaf"></i>
+  </div>
 
-        <div class="logo-text">
-          <span class="brand-name">GREENSCAPE</span>
-          <span class="brand-subtext">LAWN & LANDSCAPING</span>
-        </div>
+  <!-- LOGO TEXT -->
+  <div class="logo-text">
+    <span class="brand-name">GREENSCAPE</span>
+    <span class="brand-subtext">LAWNCARE & LANDSCAPING</span>
+  </div>
 
-      </a>
+</a>
+    <!-- MAIN -->
+    <div class="menu-title">MAIN</div>
 
-      <button class="sidebar-close" id="sidebarClose">
-        <i class="fas fa-times"></i>
-      </button>
-
-    </div>
-
-    <nav class="sidebar-nav">
-
-      <a class="active"><i class="fas fa-chart-line"></i><span>Dashboard</span></a>
-      <a><i class="fas fa-seedling"></i><span>Projects</span></a>
-      <a><i class="fas fa-users"></i><span>Clients</span></a>
-      <a><i class="fas fa-water"></i><span>Irrigation</span></a>
-      <a><i class="fas fa-tree"></i><span>Designs</span></a>
-      <a><i class="fas fa-screwdriver-wrench"></i><span>Maintenance</span></a>
-      <a><i class="fas fa-bell"></i><span>Notifications</span></a>
-      <a><i class="fas fa-cog"></i><span>Settings</span></a>
-
+    <nav class="menu">
+        <a href="#" class="active"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+        <a href="#"><i class="fa-solid fa-chart-line"></i> Analytics</a>
+        <a href="#"><i class="fa-solid fa-bell"></i> Notifications</a>
     </nav>
 
-    <div class="sidebar-bottom">
+    <!-- MANAGEMENT -->
+    <div class="menu-title">MANAGEMENT</div>
 
-      <button id="darkToggle">
-        <i class="fas fa-moon"></i>
-        <span>Dark Mode</span>
-      </button>
+    <nav class="menu">
+        <a href="#"><i class="fa-solid fa-users"></i> Customers</a>
+        <a href="#"><i class="fa-solid fa-seedling"></i> Services</a>
+        <a href="#"><i class="fa-solid fa-calendar-check"></i> Bookings</a>
+        <a href="#"><i class="fa-solid fa-file-contract"></i> Projects</a>
+    </nav>
 
-      <button id="rtlToggle">
-        <i class="fas fa-right-left"></i>
-        <span>RTL</span>
-      </button>
+    <!-- BUSINESS -->
+    <div class="menu-title">BUSINESS</div>
 
-      <a href="#">
-        <i class="fas fa-right-from-bracket"></i>
-        <span>Logout</span>
-      </a>
+    <nav class="menu">
+        <a href="#"><i class="fa-solid fa-wallet"></i> Revenue</a>
+        <a href="#"><i class="fa-solid fa-receipt"></i> Invoices</a>
+        <a href="#"><i class="fa-solid fa-message"></i> Messages</a>
+    </nav>
 
-    </div>
+    <!-- SETTINGS -->
+    <div class="menu-title">SYSTEM</div>
 
-  </aside>
+    <nav class="menu">
+        <a href="#"><i class="fa-solid fa-gear"></i> Settings</a>
+        <a href="#"><i class="fa-solid fa-shield"></i> Security</a>
+    </nav>
 
-  
-<main class="main-content">
+</aside>
 
-  
-  <header class="topbar">
+<!-- MAIN -->
+<main class="main">
 
-    <div class="topbar-left">
-      <button class="menu-toggle" id="menuToggle">
-        <i class="fas fa-bars"></i>
-      </button>
-
-      <div>
-        <h1>Admin Dashboard</h1>
-        <p>Welcome back, GreenScape Administrator</p>
-      </div>
-    </div>
+<!-- TOPBAR -->
+<header class="topbar">
+    <button class="icon-btn menu-toggle" id="menuToggle">
+    <i class="fa-solid fa-bars"></i>
+</button>
+    <h2>Dashboard Overview</h2>
 
     <div class="topbar-right">
+      <button class="icon-btn" id="themeToggle">
+    <i class="fa-solid fa-moon"></i>
+</button>
 
-      <button class="topbar-btn">
-        <i class="fas fa-bell"></i>
-      </button>
-
-      <button class="topbar-btn" id="darkToggle">
-        <i class="fas fa-moon"></i>
-      </button>
-
-      <button class="topbar-btn" id="rtlToggle">
-        <i class="fas fa-right-left"></i>
-      </button>
-
-      <div class="profile-box">
-        <img src="../images/team1.jpg" alt="">
-        <div>
-          <h4>Admin</h4>
-          <span>Landscape Manager</span>
+<button class="icon-btn" id="rtlToggle">
+    <i class="fa-solid fa-right-left"></i>
+</button>
+        <div class="search">
+            <i class="fa-solid fa-search"></i>
+            <input type="text" placeholder="Search...">
         </div>
-      </div>
 
-    </div>
-
-  </header>
-
-  
-  <section class="welcome-card">
-
-    <div>
-      <h2>🌿 GreenScape Premium Dashboard</h2>
-
-      <p>
-        Manage landscaping projects, irrigation systems,
-        maintenance schedules and client operations from one place.
-      </p>
-
-      <button class="btn-dashboard">
-        Dashboard Settings
-      </button>
-    </div>
-
-  </section>
-
-  
-  <section class="dashboard-overview">
-
-    
-    <div class="dashboard-card large-card">
-
-      <h3>Projected Revenue</h3>
-
-      <h2>$12.8K</h2>
-
-      <p>
-        Estimated revenue for the next 30 days
-      </p>
-
-      <div class="chart-bars">
-
-        <div class="bar" style="height:40%"></div>
-        <div class="bar" style="height:65%"></div>
-        <div class="bar" style="height:45%"></div>
-        <div class="bar" style="height:80%"></div>
-        <div class="bar" style="height:50%"></div>
-        <div class="bar" style="height:90%"></div>
-        <div class="bar" style="height:60%"></div>
-        <div class="bar" style="height:75%"></div>
-        <div class="bar" style="height:55%"></div>
-        <div class="bar" style="height:95%"></div>
-
-      </div>
-
-    </div>
-
-    
-    <div class="dashboard-card">
-
-      <h3>Account Standing</h3>
-
-      <div class="status-row">
-        <span>Outstanding</span>
-        <strong>$22,415</strong>
-      </div>
-
-      <div class="status-row">
-        <span>Credit</span>
-        <strong>$10,591</strong>
-      </div>
-
-      <div class="status-row">
-        <span>Paid</span>
-        <strong>$90,423</strong>
-      </div>
-
-    </div>
-
-  </section>
-
-  
-  <section class="metrics-grid">
-
-    <div class="metric-card">
-      <i class="fas fa-seedling"></i>
-      <h3>148</h3>
-      <p>Active Projects</p>
-    </div>
-
-    <div class="metric-card">
-      <i class="fas fa-users"></i>
-      <h3>328</h3>
-      <p>Clients</p>
-    </div>
-
-    <div class="metric-card">
-      <i class="fas fa-water"></i>
-      <h3>92%</h3>
-      <p>Irrigation Efficiency</p>
-    </div>
-
-    <div class="metric-card">
-      <i class="fas fa-tree"></i>
-      <h3>764</h3>
-      <p>Trees Managed</p>
-    </div>
-
-  </section>
-
-  
-  <section class="dashboard-overview">
-
-    
-    <div class="dashboard-card">
-
-      <h3>Recent Projects</h3>
-
-      <div class="project-item">
-        <img src="../images/lawn1.jpg">
-        <div>
-          <h4>Luxury Villa Garden</h4>
-          <p>Mumbai</p>
+        <div class="profile">
+            <i class="fa-solid fa-bell"></i>
+            <img src="../images/team4.jpg" alt="">
         </div>
-      </div>
+    </div>
+</header>
 
-      <div class="project-item">
-        <img src="../images/lawn2.jpg">
-        <div>
-          <h4>Corporate Landscape</h4>
-          <p>Pune</p>
-        </div>
-      </div>
+<!-- STATS -->
+<section class="stats">
 
-      <div class="project-item">
-        <img src="../images/lawn3.jpg">
-        <div>
-          <h4>Eco Resort</h4>
-          <p>Lonavala</p>
-        </div>
-      </div>
+    <div class="card stat-card">
+        <i class="fa-solid fa-users"></i>
+        <div><h3>1,245</h3><p>Customers</p></div>
+    </div>
+
+    <div class="card stat-card">
+        <i class="fa-solid fa-seedling"></i>
+        <div><h3>320</h3><p>Projects</p></div>
+    </div>
+
+    <div class="card stat-card">
+        <i class="fa-solid fa-calendar-check"></i>
+        <div><h3>58</h3><p>Bookings</p></div>
+    </div>
+
+    <div class="card stat-card">
+        <i class="fa-solid fa-dollar-sign"></i>
+        <div><h3>₹4.2L</h3><p>Revenue</p></div>
+    </div>
+
+</section>
+
+<!-- CHARTS -->
+<section class="charts-grid">
+
+    <div class="card panel">
+        <h3><i class="fa-solid fa-chart-line"></i> Revenue Overview</h3>
+        <canvas id="revenueChart"></canvas>
+    </div>
+
+    <div class="card panel">
+        <h3><i class="fa-solid fa-chart-pie"></i> Service Distribution</h3>
+        <canvas id="serviceChart"></canvas>
+    </div>
+
+</section>
+
+<!-- CONTENT GRID -->
+<section class="dashboard-grid">
+
+    <!-- BOOKINGS -->
+    <div class="card panel">
+
+        <h3><i class="fa-solid fa-calendar"></i> Recent Bookings</h3>
+
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Service</th>
+                <th>Status</th>
+            </tr>
+
+            <tr>
+                <td>Aarav Sharma</td>
+                <td>Irrigation</td>
+                <td><span class="status active">Active</span></td>
+            </tr>
+
+            <tr>
+                <td>Neha Reddy</td>
+                <td>Garden Design</td>
+                <td><span class="status pending">Pending</span></td>
+            </tr>
+
+            <tr>
+                <td>Rahul Verma</td>
+                <td>Lighting</td>
+                <td><span class="status completed">Completed</span></td>
+            </tr>
+
+        </table>
 
     </div>
 
-    
-    <div class="dashboard-card">
+    <!-- ACTIVITY FEED -->
+    <div class="card panel">
 
-      <h3>Client Balances</h3>
+        <h3><i class="fa-solid fa-bolt"></i> Activity Feed</h3>
 
-      <div class="balance-row">
-        <span>Wilson Estate</span>
-        <strong>$12,450</strong>
-      </div>
+        <ul class="activity">
 
-      <div class="balance-row">
-        <span>Green Valley Resort</span>
-        <strong>$8,900</strong>
-      </div>
+            <li><i class="fa-solid fa-user-plus"></i> New customer registered</li>
+            <li><i class="fa-solid fa-calendar"></i> Booking confirmed</li>
+            <li><i class="fa-solid fa-seedling"></i> Project completed</li>
+            <li><i class="fa-solid fa-envelope"></i> New message received</li>
 
-      <div class="balance-row">
-        <span>City Corporate Park</span>
-        <strong>$5,400</strong>
-      </div>
-
-      <div class="balance-row">
-        <span>Sunrise Villas</span>
-        <strong>$4,150</strong>
-      </div>
+        </ul>
 
     </div>
 
-  </section>
-
-  
-  <section class="dashboard-card">
-
-    <h3>Landscape Performance Analytics</h3>
-
-    <div class="progress-item">
-      <div class="progress-head">
-        <span>Water Conservation</span>
-        <span>86%</span>
-      </div>
-
-      <div class="progress-bar">
-        <span style="width:86%"></span>
-      </div>
-    </div>
-
-    <div class="progress-item">
-      <div class="progress-head">
-        <span>Project Completion</span>
-        <span>72%</span>
-      </div>
-
-      <div class="progress-bar">
-        <span style="width:72%"></span>
-      </div>
-    </div>
-
-    <div class="progress-item">
-      <div class="progress-head">
-        <span>Customer Satisfaction</span>
-        <span>98%</span>
-      </div>
-
-      <div class="progress-bar">
-        <span style="width:98%"></span>
-      </div>
-    </div>
-
-  </section>
+</section>
 
 </main>
+</div>
 
-<script src="admin.js"></script>
+<!-- CHART SCRIPT -->
+<script>
+/* Revenue Chart */
+const revenueChart = new Chart(document.getElementById("revenueChart"), {
+    type: "line",
+    data: {
+        labels: ["Jan","Feb","Mar","Apr","May","Jun"],
+        datasets: [{
+            label: "Revenue (₹)",
+            data: [12000, 19000, 15000, 22000, 30000, 42000],
+            borderColor: "#1b5e20",
+            backgroundColor: "rgba(27,94,32,0.2)",
+            fill: true,
+            tension: 0.4
+        }]
+    }
+});
+
+/* Service Pie Chart */
+const serviceChart = new Chart(document.getElementById("serviceChart"), {
+    type: "doughnut",
+    data: {
+        labels: ["Irrigation","Design","Maintenance","Lighting"],
+        datasets: [{
+            data: [40, 25, 20, 15],
+            backgroundColor: ["#1b5e20","#2e7d32","#bfa46f","#111827"]
+        }]
+    }
+});
+
+// ==================================================
+// DARK MODE TOGGLE
+// ==================================================
+
+const themeToggle = document.getElementById("themeToggle");
+
+if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+
+        const icon = themeToggle.querySelector("i");
+
+        if (document.body.classList.contains("dark-mode")) {
+            icon.classList.remove("fa-moon");
+            icon.classList.add("fa-sun");
+        } else {
+            icon.classList.remove("fa-sun");
+            icon.classList.add("fa-moon");
+        }
+    });
+}
+
+// ==================================================
+// RTL TOGGLE
+// ==================================================
+
+const rtlToggle = document.getElementById("rtlToggle");
+
+if (rtlToggle) {
+    rtlToggle.addEventListener("click", () => {
+        document.body.classList.toggle("rtl");
+    });
+}
+
+// ==================================================
+// MOBILE SIDEBAR TOGGLE
+// (Optional hamburger button support)
+// ==================================================
+
+function toggleSidebar() {
+    const sidebar = document.querySelector(".sidebar");
+    if (sidebar) {
+        sidebar.classList.toggle("active");
+    }
+}
+
+// ==================================================
+// CLOSE SIDEBAR ON OUTSIDE CLICK (MOBILE UX)
+// ==================================================
+
+document.addEventListener("click", (e) => {
+    const sidebar = document.querySelector(".sidebar");
+    const isClickInside = sidebar?.contains(e.target);
+
+    if (!isClickInside && window.innerWidth <= 992) {
+        sidebar?.classList.remove("active");
+    }
+});
+
+// ==================================================
+// SMOOTH SCROLL (optional improvement)
+// ==================================================
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        const target = document.querySelector(this.getAttribute("href"));
+
+        if (target) {
+            target.scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+    });
+});
+
+// ==================================================
+// AUTO ACTIVE MENU HIGHLIGHT (OPTIONAL)
+// ==================================================
+
+const menuLinks = document.querySelectorAll(".menu a");
+
+menuLinks.forEach(link => {
+    link.addEventListener("click", () => {
+        menuLinks.forEach(l => l.classList.remove("active"));
+        link.classList.add("active");
+    });
+});// ==================================================
+// SIDEBAR TOGGLE (MENU BUTTON)
+// ==================================================
+
+const menuToggle = document.getElementById("menuToggle");
+const sidebar = document.querySelector(".sidebar");
+
+if (menuToggle && sidebar) {
+    menuToggle.addEventListener("click", () => {
+        sidebar.classList.toggle("active");
+    });
+}
+
+// ==================================================
+// CLOSE SIDEBAR WHEN CLICKING OUTSIDE (MOBILE)
+// ==================================================
+
+document.addEventListener("click", (e) => {
+    if (!sidebar.contains(e.target) && !menuToggle.contains(e.target)) {
+        if (window.innerWidth <= 1024) {
+            sidebar.classList.remove("active");
+        }
+    }
+});
+</script>
 
 </body>
 </html>

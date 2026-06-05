@@ -3,178 +3,129 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nethra Senior Care</title>
+  <title>GreenScape</title>
 
   <link rel="stylesheet" href="../css/com.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
+
 <body>
-
 <header class="site-header">
+  <div class="nav-container">
 
-    <div class="nav-container">
+    <!-- LOGO -->
+    <a href="../index.html" class="logo-box">
 
-        
+      <!-- LOGO ICON (NEW) -->
+      <div class="logo-icon">
+        <i class="fas fa-leaf"></i>
+      </div>
 
-        <a href="../index.html" class="logo-box">
 
-            <div class="logo-icon">
-                <i class="fa-solid fa-leaf"></i>
-            </div>
+      <div class="logo-text">
+        <span class="brand-name">GREENSCAPE</span>
+        <span class="brand-subtext">LAWNCARE & LANDSCAPING</span>
+      </div>
 
-            <div class="logo-text">
-                <span class="brand-name">GREENSCAPE</span>
-                <span class="brand-subtext">LAWN & LANDSCAPING</span>
-            </div>
+    </a>
 
-        </a>
+    <!-- DESKTOP NAV -->
+    <nav class="desktop-nav">
+      <ul class="nav-links" id="nav-menu">
 
-        
+        <li class="nav-item has-dropdown">
+          <a href="../index.html" class="nav-link">Home</a>
 
-        <nav class="desktop-nav">
+          <ul class="dropdown-menu">
+            <li class="dropdown-item">
+              <a href="../index.html">Home 1</a>
+            </li>
+            <li class="dropdown-item">
+              <a href="../home/home.html">Home 2</a>
+            </li>
+          </ul>
+        </li>
 
-            <ul class="nav-links">
+        <li class="nav-item">
+          <a href="../about/about.html" class="nav-link">About</a>
+        </li>
 
-                <li class="nav-item has-dropdown">
+        <li class="nav-item">
+          <a href="../services/services.html" class="nav-link">Services</a>
+        </li>
 
-                    <a href="../index.html" class="nav-link">
-                        Home
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </a>
+       
+        <li class="nav-item">
+          <a href="../blogs/bolg.html" class="nav-link">Blog</a>
+        </li>
 
-                    <ul class="dropdown-menu">
-                        <li><a href="../index.html">Home 1</a></li>
-                        <li><a href="../Home/home.html">Home 2</a></li>
-                    </ul>
+        <li class="nav-item">
+          <a href="../contact/contact.html" class="nav-link">Contact</a>
+        </li>
 
-                </li>
+        <li class="nav-item">
+          <a href="../admin/admin.html" class="nav-link">Dashboard</a>
+        </li>
 
-                <li class="nav-item">
-                    <a href="../about/about.html" class="nav-link">
-                        About
-                    </a>
-                </li>
+      </ul>
+    </nav>
 
-                <li class="nav-item">
-                    <a href="../Services/services.html" class="nav-link">
-                        Services
-                    </a>
-                </li>
+    <!-- HEADER ACTIONS -->
+    <div class="header-actions">
 
-                <li class="nav-item">
-                    <a href="../blogs/bolg.html" class="nav-link">
-                       Blogs
-                    </a>
-                </li>
+      <button class="action-btn" id="theme-toggle">
+        <i class="fas fa-moon"></i>
+      </button>
 
-                
-                <li class="nav-item">
-                    <a href="../contact/contact.html" class="nav-link">
-                        Contact
-                    </a>
-                </li>
+      <button class="action-btn" id="rtl-toggle">
+        <i class="fas fa-right-left"></i>
+      </button>
 
-                <li class="nav-item">
-                    <a href="../admin/admin.html" class="nav-link">
-                        Dashboard
-                    </a>
-                </li>
+      <a href="../quote/quote.html" class="nav-btn secondary-btn">
+        Get Quote
+      </a>
 
-            </ul>
+      <a href="../bash/login.html" class="nav-btn primary-btn">
+        Book Service
+      </a>
 
-        </nav>
-
-        
-
-        <div class="header-actions">
-
-            <button
-                class="action-btn"
-                id="theme-toggle"
-                aria-label="Theme">
-
-                <i class="fa-solid fa-moon"></i>
-
-            </button>
-
-            <button
-                class="action-btn"
-                id="rtl-toggle"
-                aria-label="RTL">
-
-                <i class="fa-solid fa-right-left"></i>
-
-            </button>
-
-            <a href="../contact/contact.html"
-               class="nav-btn secondary-btn">
-
-                Call Now
-
-            </a>
-
-            <a href="../quote/quote.html"
-               class="nav-btn primary-btn">
-
-                Free Estimate
-
-            </a>
-
-            <button
-                class="hamburger"
-                id="hamburger"
-                aria-label="Menu">
-
-                <span></span>
-                <span></span>
-                <span></span>
-
-            </button>
-
-        </div>
+      <button class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
     </div>
 
-    
+  </div>
 
-    <div class="mobile-menu" id="mobile-menu">
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu">
 
-        <ul class="mobile-links">
+    <ul class="mobile-links">
+      <li><a href="../index.html">Home 1</a></li>
+      <li><a href="../home/home.html">Home 2</a></li>
+      <li><a href="../about/about.html">About</a></li>
+      <li><a href="../services/services.html">Services</a></li>
+     
+      <li><a href="../blogs/bolg.html">Blog</a></li>
+      <li><a href="../contact/contact.html">Contact</a></li>
+      <li><a href="../dashboard/dashboard.html">Dashboard</a></li>
+    </ul>
 
-            <li><a href="../index.html">Home 1</a></li>
-            <li><a href="../Home/home.html">Home 2</a></li>
-            <li><a href="../about/about.html">About</a></li>
-            <li><a href="../services/services.html">Services</a></li>
-            <li><a href="../blogs/bolg.html">Blogs</a></li>
-            
-            <li><a href="../contact/contact.html">Contact</a></li>
-            <li><a href="../admin/admin.html">Dashboard</a></li>
+    <div class="mobile-actions">
+      <a href="../quote/quote.html" class="nav-btn secondary-btn full-width">
+        Get Quote
+      </a>
 
-        </ul>
-
-        <div class="mobile-actions">
-
-            <a href="../contact/contact.html"
-               class="nav-btn secondary-btn full-width">
-
-                Call Now
-
-            </a>
-
-            <a href="../quote/quote.html"
-               class="nav-btn primary-btn full-width">
-
-                Free Estimate
-
-            </a>
-
-        </div>
-
+      <a href="../bash/login.html" class="nav-btn primary-btn full-width">
+        Book Service
+      </a>
     </div>
 
+  </div>
 </header>
+<script src="../js/component.js"></script>
 
-
-    <script src="../js/component.js"></script>
 </body>
 </html>

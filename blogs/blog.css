@@ -1,394 +1,286 @@
-/* =====================================================
-   GREENSCAPE BLOG - CLEAN STYLESHEET
-===================================================== */
+/* ==================================================
+   BLOG HERO
+================================================== */
 
-/* =========================
-   GLOBAL RESET HELPERS
-========================= */
+.blog-hero{
+    padding:140px 20px 100px;
+    text-align:center;
 
-* {
-  box-sizing: border-box;
-}
-
-img {
-  max-width: 100%;
-  display: block;
-}
-
-/* =========================
-   HERO SECTION
-========================= */
-
-.blog-hero {
-  background:
+    background:
     linear-gradient(
-        135deg,
-        rgba(46,125,50,.08),
-        rgba(46,125,50,.02)
-    );
-
-  color: #151515;
-  padding: 90px 20px;
-  text-align: center;
+        rgba(0,0,0,.65),
+        rgba(0,0,0,.65)
+    ),
+    url("../images/blog1.jpg")
+    center/cover no-repeat;
 }
 
-.blog-hero h1 {
-  font-size: 44px;
-  margin-bottom: 10px;
+.blog-hero .hero-content{
+    max-width:850px;
+    margin:auto;
 }
 
-.blog-hero p {
-  font-size: 18px;
-  opacity: 0.9;
+.blog-hero h1{
+    color:#fff;
+    margin-bottom:20px;
 }
 
-
-.search-box {
-  margin-top: 25px;
-  display: flex;
-  max-width: 520px;
-  margin-inline: auto;
-  border-radius: 50px;
-  overflow: hidden;
-  background: #fff;
+.blog-hero p{
+    color:rgba(255,255,255,.9);
+    max-width:700px;
+    margin:auto;
 }
 
-.search-box input {
-  flex: 1;
-  padding: 12px 15px;
-  border: none;
-  outline: none;
-  font-size: 14px;
+/* ==================================================
+   SECTION BADGE
+================================================== */
+
+.section-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+
+    margin-bottom:15px;
+
+    color:var(--primary);
+
+    font-size:.85rem;
+    font-weight:700;
+    letter-spacing:1px;
+    text-transform:uppercase;
 }
 
-.search-box button {
-  padding: 12px 20px;
-  border: none;
-  background: #2e7d32;
-  color: #fff;
-  cursor: pointer;
-  transition: 0.3s ease;
+.section-badge::before{
+    content:"";
+    width:40px;
+    height:2px;
+    border-radius:50px;
+    background:var(--primary);
 }
 
-.search-box button:hover {
-  background: #1b5e20;
+/* ==================================================
+   FEATURED POST
+================================================== */
+
+.featured-post{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:center;
 }
 
-/* =========================
-   FEATURED SECTION
-========================= */
-
-.featured {
-  padding: 70px 20px;
+.featured-image img{
+    width:100%;
+    border-radius:var(--radius);
+    display:block;
 }
 
-.featured-card {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 30px;
-  align-items: center;
-  background: #fff;
-  border-radius: 14px;
-  overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+.featured-content h2{
+    margin-bottom:20px;
 }
 
-.featured-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.featured-content p{
+    margin-bottom:25px;
+    color:var(--text-light);
 }
 
-.featured-card span {
-  display: inline-block;
-  padding: 6px 12px;
-  background: #e8f5e9;
-  color: #2e7d32;
-  font-size: 12px;
-  border-radius: 20px;
-  margin-bottom: 10px;
-}
-
-/* =========================
+/* ==================================================
    BLOG GRID
-========================= */
+================================================== */
 
-.blog-section {
-  padding: 70px 20px;
+.blog-grid{
+    margin-top:50px;
 }
 
-.blog-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
+.blog-card{
+    background:var(--light);
+    border:1px solid var(--border);
+
+    border-radius:var(--radius);
+    overflow:hidden;
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
 }
 
-.blog-card {
- 
-  border-radius: 14px;
-  overflow: hidden;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.blog-card:hover{
+    transform:translateY(-8px);
+    box-shadow:var(--shadow-hover);
 }
 
-.blog-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+.blog-card img{
+    width:100%;
+    height:230px;
+    object-fit:cover;
+    display:block;
 }
 
-.blog-card img {
-  height: 210px;
-  width: 100%;
-  object-fit: cover;
+.blog-content{
+    padding:25px;
 }
 
-.blog-card .content {
-  padding: 15px;
+.blog-category{
+    display:inline-block;
+
+    margin-bottom:15px;
+
+    color:var(--primary);
+
+    font-size:.8rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:1px;
 }
 
-.blog-card span {
-  font-size: 12px;
-  color: #2e7d32;
-  font-weight: 600;
+.blog-content h3{
+    margin-bottom:15px;
 }
 
-.blog-card h3 {
-  margin: 8px 0;
-  font-size: 18px;
+.blog-content p{
+    color:var(--text-light);
+    margin-bottom:20px;
 }
 
-.blog-card p {
-  font-size: 14px;
-  color: #666;
+.read-more-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    color:var(--primary);
+    font-weight:600;
+
+    transition:var(--transition);
 }
 
-/* =========================
-   CATEGORIES
-========================= */
-
-.categories {
-  padding: 70px 20px;
-  background: #f5f7f5;
-  text-align: center;
+.read-more-btn:hover{
+    gap:14px;
 }
 
-.cat-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 15px;
-  margin-top: 25px;
-}
-
-.cat-card {
-
-  padding: 14px;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: 0.3s ease;
-  font-weight: 500;
-  user-select: none;
-}
-
-.cat-card:hover {
-  background: #2e7d32;
-  color: #fff;
-  transform: translateY(-3px);
-}
-
-/* =========================
+/* ==================================================
    NEWSLETTER
-========================= */
+================================================== */
 
-.newsletter {
-  padding: 80px 20px;
-  text-align: center;
-  background: linear-gradient(135deg, #2e7d32, #1b5e20);
-  color: #fff;
+.newsletter-section{
+    padding:100px 20px;
+    text-align:center;
+
+    background:var(--soft);
 }
 
-.subscribe {
-  margin-top: 20px;
-  display: flex;
-  max-width: 520px;
-  margin-inline: auto;
-  border-radius: 50px;
-  overflow: hidden;
-  background: #fff;
+.newsletter-section h2{
+    margin-bottom:15px;
 }
 
-.subscribe input {
-  flex: 1;
-  padding: 12px;
-  border: none;
-  outline: none;
+.newsletter-section p{
+    max-width:650px;
+    margin:0 auto 30px;
+    color:var(--text-light);
 }
 
-.subscribe button {
-  padding: 12px 20px;
-  border: none;
-  background: #fff;
-  color: #2e7d32;
-  font-weight: bold;
-  cursor: pointer;
+.newsletter-form{
+    max-width:650px;
+    margin:auto;
+
+    display:flex;
+    gap:15px;
 }
 
-/* =========================
-   RESPONSIVE DESIGN
-   (Mobile First Fix)
-========================= */
+.newsletter-form input{
+    flex:1;
 
+    padding:15px 20px;
 
-@media (max-width: 640px) {
+    border:1px solid var(--border);
+    border-radius:var(--radius-sm);
 
-  .blog-hero h1 {
-    font-size: 30px;
-  }
+    background:var(--light);
+    color:var(--text);
 
-  .blog-hero p {
-    font-size: 14px;
-  }
-
-  .featured-card {
-    grid-template-columns: 1fr;
-  }
-
-  .blog-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .cat-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+    outline:none;
 }
 
-
-@media (min-width: 641px) and (max-width: 1024px) {
-
-  .blog-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .cat-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+.newsletter-form input:focus{
+    border-color:var(--primary);
 }
 
+/* ==================================================
+   DARK MODE
+================================================== */
 
-@media (min-width: 1025px) and (max-width: 1280px) {
-
-  .blog-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+body.dark-mode .blog-card{
+    background:var(--secondary-soft);
+    border-color:var(--border);
 }
 
-
-@media (min-width: 1281px) {
-
-  .blog-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .featured-card {
-    max-width: 1200px;
-    margin: auto;
-  }
-}
-/* =====================================================
-   DARK MODE - GREENSCAPE BLOG
-   Trigger: <html data-theme="dark">
-===================================================== */
-
-[data-theme="dark"] body {
-  background: #0f1410;
-  color: #e8f5e9;
+body.dark-mode .blog-content p,
+body.dark-mode .featured-content p,
+body.dark-mode .newsletter-section p{
+    color:var(--text-light);
 }
 
-/* =========================
-   HERO DARK
-========================= */
-
-[data-theme="dark"] .blog-hero {
-  background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
-              url("../images/blog-hero.jpg") center/cover no-repeat;
+body.dark-mode .newsletter-section{
+    background:var(--muted);
 }
 
-/* =========================
-   CARDS
-========================= */
-
-[data-theme="dark"] .blog-card,
-[data-theme="dark"] .featured-card,
-[data-theme="dark"] .cat-card {
-  background: #1a221b;
-  color: #e8f5e9;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+body.dark-mode .newsletter-form input{
+    background:var(--secondary-soft);
+    border-color:var(--border);
+    color:var(--text);
 }
 
-
-[data-theme="dark"] .blog-card p,
-[data-theme="dark"] .featured-card p {
-  color: #c8e6c9;
+body.dark-mode .section-badge{
+    color:var(--primary);
 }
 
-/* =========================
-   CATEGORY SECTION
-========================= */
-
-[data-theme="dark"] .categories {
-  background: #121a13;
+body.dark-mode .section-badge::before{
+    background:var(--primary);
 }
 
-[data-theme="dark"] .cat-card:hover {
-  background: #2e7d32;
-  color: #fff;
+/* ==================================================
+   RESPONSIVE
+================================================== */
+
+@media (max-width:992px){
+
+    .featured-post{
+        grid-template-columns:1fr;
+    }
+
 }
 
-/* =========================
-   SEARCH BOX
-========================= */
+@media (max-width:768px){
 
-[data-theme="dark"] .search-box,
-[data-theme="dark"] .subscribe {
-  background: #1a221b;
-  border: 1px solid #2e7d32;
+    .blog-hero{
+        padding:120px 20px 80px;
+    }
+
+    .newsletter-form{
+        flex-direction:column;
+    }
+
+    .newsletter-form button{
+        width:100%;
+    }
+
+    .blog-card img{
+        height:220px;
+    }
+
 }
 
-[data-theme="dark"] .search-box input,
-[data-theme="dark"] .subscribe input {
-  background: transparent;
-  color: #e8f5e9;
-}
+@media (max-width:576px){
 
-/* =========================
-   BUTTONS
-========================= */
+    .blog-hero h1{
+        font-size:2rem;
+    }
 
-[data-theme="dark"] .search-box button {
-  background: #2e7d32;
-}
+    .featured-content h2{
+        font-size:1.8rem;
+    }
 
-[data-theme="dark"] .search-box button:hover {
-  background: #1b5e20;
-}
+    .blog-card img{
+        height:200px;
+    }
 
-/* =========================
-   NEWSLETTER
-========================= */
-
-[data-theme="dark"] .newsletter {
-  background: linear-gradient(135deg, #1b5e20, #0d1a10);
-}
-
-/* =========================
-   LINKS / TEXT FIX
-========================= */
-
-[data-theme="dark"] a {
-  color: #a5d6a7;
-}
-
-[data-theme="dark"] h1,
-[data-theme="dark"] h2,
-[data-theme="dark"] h3 {
-  color: #e8f5e9;
 }

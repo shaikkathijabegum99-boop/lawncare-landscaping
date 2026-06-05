@@ -1,115 +1,205 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Seasonal Lawn Guide | GreenScape</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | GreenScape</title>
 
-   
-<link rel="icon" href="../images/favicon.png" />
+<link rel="icon" href="../images/favicon.png">
 
-  <link rel="stylesheet" href="../global/global.css" />
-  <link rel="stylesheet" href="../css/com.css" />
-  <link rel="stylesheet" href="./contact.css" />
+<link rel="stylesheet" href="../global/global.css">
+<link rel="stylesheet" href="../css/com.css">
+<link rel="stylesheet" href="contact.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
 
+<!-- NAVBAR -->
 <div id="navbar"></div>
 
+<!-- HERO -->
+<section class="contact-hero">
 
+    <div class="hero-content">
 
+        <span class="hero-tag">
+            <i class="fa-solid fa-envelope"></i>
+            Contact GreenScape
+        </span>
 
+        <h1>Let’s Build Your Dream Outdoor Space</h1>
 
-<div class="page">
+        <p>
+            Reach out to our landscaping experts for smart irrigation,
+            garden design, outdoor lighting, and eco-friendly solutions.
+        </p>
 
-  <div class="card">
+        <div class="hero-buttons">
+            <a href="#contact" class="btn btn-primary">
+                <i class="fa-solid fa-paper-plane"></i>
+                Send Message
+            </a>
 
-    
-    <div class="left">
-
-      
-   
-
-      <h1>Let’s Connect</h1>
-      <p>Manage GreenScape scheduling, support, and service requests easily.</p>
-
-      <div class="info">
-        <div><i class="fas fa-phone"></i> +91 98765 43210</div>
-        <div><i class="fas fa-envelope"></i> support@GreenScape.com</div>
-        <div><i class="fas fa-location-dot"></i> Chennai, India</div>
-      </div>
+            <a href="../services/services.html" class="btn btn-secondary">
+                <i class="fa-solid fa-list"></i>
+                View Services
+            </a>
+        </div>
 
     </div>
 
-    
-    <div class="right">
+</section>
 
-      <h2>Send Message</h2>
+<!-- CONTACT SECTION -->
+<section class="section" id="contact">
 
-      <form id="contactForm">
+<div class="container contact-grid">
 
-        <div class="field">
-          <i class="fas fa-user"></i>
-          <input type="text" id="name" placeholder="Full Name" required>
-        </div>
+    <!-- FORM -->
+    <div class="contact-form-box">
 
-        <div class="field">
-          <i class="fas fa-envelope"></i>
-          <input type="email" id="email" placeholder="Email Address" required>
-        </div>
+        <span class="section-badge">
+            Get In Touch
+        </span>
 
-        <div class="field">
-          <i class="fas fa-phone"></i>
-          <input type="text" id="phone" placeholder="Phone (optional)">
-        </div>
+        <h2>
+            <i class="fa-solid fa-paper-plane"></i>
+            Send Us a Message
+        </h2>
 
-        <div class="field textarea">
-          <i class="fas fa-message"></i>
-          <textarea id="message" placeholder="Your Message" required></textarea>
-        </div>
+        <form class="contact-form">
 
-        <button type="submit">
-          <i class="fas fa-paper-plane"></i> Send Message
-        </button>
+            <div class="input-row">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+            </div>
 
-        <p id="status"></p>
+            <input type="text" placeholder="Subject">
 
-      </form>
+            <textarea rows="6" placeholder="Your Message"></textarea>
+
+            <button type="submit" class="btn btn-primary">
+                <i class="fa-solid fa-paper-plane"></i>
+                Send Message
+            </button>
+
+        </form>
 
     </div>
 
-  </div>
+    <!-- INFO -->
+    <div class="contact-info">
+
+        <span class="section-badge">
+            Contact Info
+        </span>
+
+        <h2>
+            <i class="fa-solid fa-address-card"></i>
+            Reach Us
+        </h2>
+
+        <div class="info-card">
+            <i class="fa-solid fa-location-dot"></i>
+            <div>
+                <h4>Address</h4>
+                <p>GreenScape HQ, Andhra Pradesh, India</p>
+            </div>
+        </div>
+
+        <div class="info-card">
+            <i class="fa-solid fa-phone"></i>
+            <div>
+                <h4>Phone</h4>
+                <p>+91 98765 43210</p>
+            </div>
+        </div>
+
+        <div class="info-card">
+            <i class="fa-solid fa-envelope"></i>
+            <div>
+                <h4>Email</h4>
+                <p>support@greenscape.com</p>
+            </div>
+        </div>
+
+        <div class="info-card">
+            <i class="fa-solid fa-clock"></i>
+            <div>
+                <h4>Working Hours</h4>
+                <p>Mon - Sat: 9:00 AM - 6:00 PM</p>
+            </div>
+        </div>
+
+    </div>
 
 </div>
 
-<section class="map-section">
+</section>
 
-  <div class="container">
+<!-- MAP -->
+<section class="section">
 
-    <div class="map-header">
-      <h2>Find Us</h2>
-      <p>Visit our GreenScape office or contact us anytime.</p>
-    </div>
+<div class="container">
 
-    <div class="map-box">
+    <span class="section-badge">
+        Location
+    </span>
 
-      <iframe
-        src="https://www.google.com/maps?q=Chennai,India&output=embed"
-        allowfullscreen=""
+    <h2>
+        <i class="fa-solid fa-map"></i>
+        Find Us on Map
+    </h2>
+
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18..."
+        height="350"
+        style="width:100%; border:0; border-radius:12px;"
         loading="lazy">
-      </iframe>
+    </iframe>
 
-    </div>
-
-  </div>
+</div>
 
 </section>
+
+<!-- CTA -->
+<section class="cta">
+
+<div class="container">
+
+    <h2>Ready to Transform Your Garden?</h2>
+
+    <p>
+        Contact GreenScape today and start building your perfect outdoor space.
+    </p>
+
+    <div class="hero-buttons">
+
+        <a href="../services/services.html" class="btn btn-secondary">
+            <i class="fa-solid fa-leaf"></i>
+            Explore Services
+        </a>
+
+        <a href="#contact" class="btn btn-primary">
+            <i class="fa-solid fa-paper-plane"></i>
+            Contact Now
+        </a>
+
+    </div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
 <div id="footer"></div>
 
 <script src="../global/global.js"></script>
-
 <script src="../js/component.js"></script>
 <script src="contact.js"></script>
+
 </body>
 </html>

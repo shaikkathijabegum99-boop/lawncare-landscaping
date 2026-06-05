@@ -1,264 +1,172 @@
 /* ==========================================
-   DARK MODE
+   GLOBAL INITIAL LOG
 ========================================== */
 
-const themeToggle =
-document.getElementById("theme-toggle");
+console.log("🌿 Global JS Loaded - Lawncare System Ready");
 
-if(localStorage.getItem("theme")==="dark"){
-    document.body.classList.add("dark");
-}
+/* ==========================================
+   SMOOTH SCROLL (ANCHOR LINKS)
+========================================== */
 
-if(themeToggle){
+function initSmoothScroll() {
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function (e) {
+      const target = document.querySelector(this.getAttribute("href"));
+      if (!target) return;
 
-    themeToggle.addEventListener("click",()=>{
+      e.preventDefault();
 
-        document.body.classList.toggle("dark");
-
-        localStorage.setItem(
-            "theme",
-            document.body.classList.contains("dark")
-            ? "dark"
-            : "light"
-        );
-
-        updateThemeIcon();
-
+      target.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
     });
-
+  });
 }
 
-function updateThemeIcon(){
+/* ==========================================
+   SCROLL TO TOP BUTTON (OPTIONAL)
+========================================== */
 
-    const icon =
-    themeToggle?.querySelector("i");
+function createScrollTopButton() {
+  const btn = document.createElement("button");
+  btn.innerHTML = "↑";
+  btn.className = "scroll-top-btn";
 
-    if(!icon) return;
+  Object.assign(btn.style, {
+    position: "fixed",
+    right: "20px",
+    bottom: "20px",
+    width: "44px",
+    height: "44px",
+    borderRadius: "50%",
+    border: "none",
+    background: "var(--primary)",
+    color: "#fff",
+    fontSize: "18px",
+    cursor: "pointer",
+    display: "none",
+    zIndex: "9999",
+    boxShadow: "0 10px 20px rgba(0,0,0,0.15)"
+  });
 
-    if(document.body.classList.contains("dark")){
+  document.body.appendChild(btn);
 
-        icon.classList.remove("fa-moon");
-        icon.classList.add("fa-sun");
-
-    }else{
-
-        icon.classList.remove("fa-sun");
-        icon.classList.add("fa-moon");
-
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      btn.style.display = "flex";
+      btn.style.alignItems = "center";
+      btn.style.justifyContent = "center";
+    } else {
+      btn.style.display = "none";
     }
-}
+  });
 
-updateThemeIcon();
-
-/* ==========================================
-   RTL
-========================================== */
-
-const rtlToggle =
-document.getElementById("rtl-toggle");
-
-const savedDir =
-localStorage.getItem("direction");
-
-if(savedDir){
-    document.documentElement.dir = savedDir;
-}
-
-if(rtlToggle){
-
-    rtlToggle.addEventListener("click",()=>{
-
-        const currentDir =
-        document.documentElement.dir;
-
-        const newDir =
-        currentDir === "rtl"
-        ? "ltr"
-        : "rtl";
-
-        document.documentElement.dir =
-        newDir;
-
-        localStorage.setItem(
-            "direction",
-            newDir
-        );
-
+  btn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
     });
-
+  });
 }
 
 /* ==========================================
-   MOBILE MENU
+   LAZY IMAGE LOADING (PERFORMANCE)
 ========================================== */
 
-const hamburger =
-document.getElementById("hamburger");
+function initLazyImages() {
+  const images = document.querySelectorAll("img");
 
-const mobileMenu =
-document.getElementById("mobile-menu");
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        const src = img.getAttribute("data-src");
 
-if(hamburger && mobileMenu){
-
-    hamburger.addEventListener("click",()=>{
-
-        mobileMenu.classList.toggle("active");
-
-        hamburger.classList.toggle("active");
-
-    });
-
-}
-
-/* ==========================================
-   ACTIVE NAV LINK
-========================================== */
-
-const currentPage =
-window.location.pathname.split("/").pop();
-
-document
-.querySelectorAll(".nav-link")
-.forEach(link=>{
-
-    const href =
-    link.getAttribute("href");
-
-    if(
-        href &&
-        href.includes(currentPage)
-    ){
-
-        link.style.color =
-        "var(--primary)";
-
-        link.style.fontWeight =
-        "700";
-
-    }
-
-});
-
-/* ==========================================
-   SCROLL HEADER
-========================================== */
-
-const header =
-document.querySelector(".site-header");
-
-window.addEventListener("scroll",()=>{
-
-    if(!header) return;
-
-    if(window.scrollY > 50){
-
-        header.style.boxShadow =
-        "0 10px 25px rgba(0,0,0,.08)";
-
-    }else{
-
-        header.style.boxShadow =
-        "none";
-
-    }
-
-});
-
-/* ==========================================
-   COUNTER ANIMATION
-========================================== */
-
-const counters =
-document.querySelectorAll("[data-count]");
-
-const runCounter = () => {
-
-    counters.forEach(counter=>{
-
-        const target =
-        Number(counter.dataset.count);
-
-        let current = 0;
-
-        const increment =
-        target / 100;
-
-        const timer =
-        setInterval(()=>{
-
-            current += increment;
-
-            if(current >= target){
-
-                counter.textContent =
-                target;
-
-                clearInterval(timer);
-
-            }else{
-
-                counter.textContent =
-                Math.floor(current);
-
-            }
-
-        },15);
-
-    });
-
-};
-
-const observer =
-new IntersectionObserver(entries=>{
-
-    entries.forEach(entry=>{
-
-        if(entry.isIntersecting){
-
-            runCounter();
-            observer.disconnect();
-
+        if (src) {
+          img.src = src;
+          img.removeAttribute("data-src");
         }
 
+        observer.unobserve(img);
+      }
     });
+  });
 
-});
-
-if(counters.length){
-    observer.observe(counters[0]);
+  images.forEach(img => observer.observe(img));
 }
 
 /* ==========================================
-   BACK TO TOP
+   SIMPLE REVEAL ON SCROLL
 ========================================== */
 
-const backToTop =
-document.getElementById("backToTop");
+function initScrollReveal() {
+  const elements = document.querySelectorAll(".reveal");
 
-if(backToTop){
-
-    window.addEventListener("scroll",()=>{
-
-        if(window.scrollY > 400){
-
-            backToTop.classList.add("show");
-
-        }else{
-
-            backToTop.classList.remove("show");
-
-        }
-
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("active");
+      }
     });
+  }, {
+    threshold: 0.1
+  });
 
-    backToTop.addEventListener("click",()=>{
-
-        window.scrollTo({
-            top:0,
-            behavior:"smooth"
-        });
-
-    });
-
+  elements.forEach(el => observer.observe(el));
 }
 
+/* ==========================================
+   FORM AUTO VALIDATION (BASIC)
+========================================== */
+
+function initFormValidation() {
+  document.querySelectorAll("form").forEach(form => {
+    form.addEventListener("submit", (e) => {
+      const inputs = form.querySelectorAll("input[required], textarea[required]");
+
+      let valid = true;
+
+      inputs.forEach(input => {
+        if (!input.value.trim()) {
+          valid = false;
+          input.style.borderColor = "red";
+        } else {
+          input.style.borderColor = "";
+        }
+      });
+
+      if (!valid) {
+        e.preventDefault();
+        alert("⚠️ Please fill all required fields");
+      }
+    });
+  });
+}
+
+/* ==========================================
+   FOOTER YEAR AUTO UPDATE
+========================================== */
+
+function updateFooterYear() {
+  const year = new Date().getFullYear();
+
+  document.querySelectorAll(".footer-year").forEach(el => {
+    el.textContent = year;
+  });
+}
+
+/* ==========================================
+   INIT GLOBAL FEATURES
+========================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  initSmoothScroll();
+  createScrollTopButton();
+  initLazyImages();
+  initScrollReveal();
+  initFormValidation();
+  updateFooterYear();
+
+});

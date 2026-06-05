@@ -1,297 +1,291 @@
-/* =========================
-   ROOT
-========================= */
-:root {
-  --primary: #2e7d32;
-  --secondary: #1b5e20;
-  --bg: #f6f8f6;
-  --card: #ffffff;
-  --text: #1a1a1a;
-  --border: #e5e7eb;
+/* ==================================================
+   CONTACT HERO
+================================================== */
+
+.contact-hero{
+    position:relative;
+    min-height:80vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    overflow:hidden;
+
+    background:
+    linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)),
+    url("../images/lawn1.jpg.jpg") center/cover no-repeat;
+    padding:120px 20px;
 }
 
-
-[data-theme="dark"] {
-  --bg: #121212;
-  --card: #1e1e1e;
-  --text: #f5f5f5;
-  --border: #2a2a2a;
+.contact-hero .hero-content{
+    max-width:850px;
+    position:relative;
+    z-index:2;
+    margin:auto;
 }
 
-/* =========================
-   RESET
-========================= */
+.hero-tag{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
 
-body {
-  background: var(--bg);
-  color: var(--text);
-  transition: 0.3s ease;
+    padding:10px 18px;
+    margin-bottom:25px;
+
+    color:#fff;
+    background:rgba(255,255,255,.08);
+    border-radius:30px;
 }
 
-/* =========================
-   TOP BAR
-========================= */
-.topbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 25px;
-  background: var(--card);
-  border-bottom: 1px solid var(--border);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+.contact-hero h1{
+    color:#fff;
+    margin-bottom:20px;
 }
 
-
-
-
-.actions button {
-  background: transparent;
-  border: 1px solid var(--border);
-  padding: 8px 10px;
-  margin-left: 8px;
-  border-radius: 8px;
-  cursor: pointer;
+.contact-hero p{
+    max-width:700px;
+    margin:0 auto 30px;
+    color:rgba(255,255,255,.9);
 }
 
-/* =========================
-   PAGE LAYOUT
-========================= */
-.page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 60px 20px;
+/* ==================================================
+   SECTION
+================================================== */
+
+.section{
+    padding:80px 20px;
 }
 
+/* ==================================================
+   SECTION BADGE
+================================================== */
 
-.card {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  max-width: 950px;
-  width: 100%;
-  background: var(--card);
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+.section-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+
+    margin-bottom:15px;
+
+    font-size:.85rem;
+    font-weight:700;
+    letter-spacing:1px;
+    text-transform:uppercase;
+
+    color:var(--primary);
 }
 
-/* =========================
-   LEFT PANEL
-========================= */
-.left {
-  background: linear-gradient(
-    135deg,
-    rgba(46,125,50,0.1),
-    rgba(46,125,50,0.03)
-  );
-  padding: 40px;
+.section-badge::before{
+    content:"";
+    width:40px;
+    height:2px;
+    background:var(--primary);
+    border-radius:50px;
 }
 
-.left h1 {
-  font-size: 32px;
-  margin-bottom: 10px;
+/* ==================================================
+   CONTACT GRID
+================================================== */
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:40px;
 }
 
-.left p {
-  color: #666;
-  margin-bottom: 25px;
+/* ==================================================
+   FORM CARD
+================================================== */
+
+.contact-form-box{
+    background:var(--light);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+
+    padding:30px;
+    transition:var(--transition);
 }
 
-[data-theme="dark"] .left p {
-  color: #bbb;
+.contact-form-box:hover{
+    transform:translateY(-8px);
+    box-shadow:var(--shadow-hover);
 }
 
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    padding:12px 15px;
 
-.info div {
-  margin-bottom: 12px;
-  display: flex;
-  gap: 10px;
-  align-items: center;
+    margin:10px 0;
+
+    border:1px solid var(--border);
+    border-radius:var(--radius-sm);
+
+    outline:none;
+    background:var(--light);
+    color:var(--text);
+
+    transition:var(--transition);
 }
 
-/* =========================
-   RIGHT PANEL
-========================= */
-.right {
-  padding: 40px;
+.contact-form input:focus,
+.contact-form textarea:focus{
+    border-color:var(--primary);
 }
 
-.right h2 {
-  margin-bottom: 20px;
+/* INPUT ROW */
+.input-row{
+    display:flex;
+    gap:15px;
 }
 
-
-.field {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  border: 1px solid var(--border);
-  padding: 10px 12px;
-  border-radius: 10px;
-  margin-bottom: 15px;
-  background: transparent;
+.input-row input{
+    flex:1;
 }
 
-.field input,
-.field textarea {
-  width: 100%;
-  border: none;
-  outline: none;
-  background: transparent;
-  color: var(--text);
-  font-size: 14px;
+/* ==================================================
+   CONTACT INFO CARD
+================================================== */
+
+.contact-info{
+    background:var(--light);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+
+    padding:30px;
+    transition:var(--transition);
 }
 
-.field textarea {
-  resize: none;
-  height: 100px;
+.contact-info:hover{
+    transform:translateY(-8px);
+    box-shadow:var(--shadow-hover);
 }
 
-
-.field i {
-  color: var(--primary);
+.info-card{
+    display:flex;
+    gap:15px;
+    align-items:center;
+    margin-bottom:20px;
 }
 
-
-button[type="submit"] {
-  width: 100%;
-  padding: 12px;
-  border: none;
-  border-radius: 10px;
-  background: var(--primary);
-  color: #fff;
-  font-size: 15px;
-  cursor: pointer;
-  transition: 0.3s ease;
+.info-card i{
+    font-size:20px;
+    color:var(--primary);
 }
 
-button[type="submit"]:hover {
-  background: var(--secondary);
-  transform: translateY(-2px);
+/* ==================================================
+   MAP
+================================================== */
+
+iframe{
+    margin-top:20px;
 }
 
+/* ==================================================
+   CTA
+================================================== */
 
-#status {
-  margin-top: 10px;
-  font-size: 13px;
+.cta{
+    padding:100px 20px;
+    text-align:center;
+
+    background:linear-gradient(135deg, var(--primary), var(--primary-soft));
+    color:#fff;
 }
 
-/* =========================
-   LOGO INSIDE LEFT
-========================= */
+.cta h2{
+    margin-bottom:20px;
+    color:#fff;
+}
 
-/* =========================
+.cta p{
+    max-width:700px;
+    margin:0 auto 30px;
+    color:rgba(255,255,255,.9);
+}
+
+/* ==================================================
+   BUTTONS
+================================================== */
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    padding:10px 20px;
+    border-radius:var(--radius-sm);
+    text-decoration:none;
+    font-weight:600;
+
+    transition:var(--transition);
+}
+
+.btn-primary{
+    background:var(--primary);
+    color:#fff;
+}
+
+.btn-primary:hover{
+    background:var(--primary-hover);
+}
+
+.btn-secondary{
+    background:var(--muted);
+    color:var(--text);
+}
+
+.btn-secondary:hover{
+    background:var(--border);
+}
+
+/* ==================================================
+   DARK MODE
+================================================== */
+
+body.dark-mode .contact-form-box,
+body.dark-mode .contact-info{
+    background:var(--secondary-soft);
+    border-color:var(--border);
+}
+
+body.dark-mode .contact-form input,
+body.dark-mode .contact-form textarea{
+    background:var(--secondary-soft);
+    border-color:var(--border);
+    color:var(--text);
+}
+
+body.dark-mode .hero-tag{
+    background:rgba(255,255,255,.06);
+}
+
+body.dark-mode .section-badge{
+    color:var(--primary);
+}
+
+body.dark-mode .section-badge::before{
+    background:var(--primary);
+}
+
+/* ==================================================
    RESPONSIVE
-========================= */
-@media (max-width: 900px) {
-  .card {
-    grid-template-columns: 1fr;
-  }
+================================================== */
 
-  .left {
-    text-align: center;
-  }
-
-  .info div {
-    justify-content: center;
-  }
+@media(max-width:992px){
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
 }
-/* =========================
-   ACTION BUTTONS (LIGHT MODE)
-========================= */
-.actions button {
-  background: transparent;
-  border: 1px solid var(--border);
-  color: var(--text);
-  padding: 8px 10px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-/* =========================
-   ACTION BUTTONS (DARK MODE FIX)
-========================= */
-[data-theme="dark"] .actions button {
-  background: #1e1e1e;
-  border: 1px solid #333;
-  color: #ffffff;
-}
-
-
-.actions button:hover {
-  background: var(--primary);
-  color: #fff;
-  border-color: var(--primary);
-}
-
-
-[data-theme="dark"] .actions button:hover {
-  background: var(--primary);
-  color: #fff;
-}
-/* =========================
-   MAP SECTION
-========================= */
-.map-section{
-  padding:80px 20px;
-  background:var(--bg);
-}
-
-
-.map-header{
-  text-align:center;
-  margin-bottom:30px;
-}
-
-.map-header h2{
-  font-size:34px;
-  color:var(--primary);
-  margin-bottom:10px;
-}
-
-.map-header p{
-  color:var(--text-light);
-  opacity:0.8;
-}
-
-
-.map-box{
-  width:100%;
-  overflow:hidden;
-  border-radius:20px;
-  border:1px solid var(--border);
-  box-shadow:0 10px 30px rgba(0,0,0,0.08);
-}
-
-
-.map-box iframe{
-  width:100%;
-  height:450px;
-  border:0;
-  display:block;
-}
-
-
-body.dark .map-section{
-  background:#121212;
-}
-
-body.dark .map-box{
-  border-color:#2a2a2a;
-}
-
 
 @media(max-width:768px){
+    .input-row{
+        flex-direction:column;
+    }
 
-  .map-header h2{
-    font-size:28px;
-  }
-
-  .map-box iframe{
-    height:320px;
-  }
-
+    .contact-hero h1{
+        font-size:2rem;
+    }
 }

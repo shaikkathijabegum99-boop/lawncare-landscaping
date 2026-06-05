@@ -1,104 +1,77 @@
-document.addEventListener("DOMContentLoaded", () => {
+/* ==========================================
+   COUNTER ANIMATION
+========================================== */
 
-    /* =========================
-       STAT COUNTER ANIMATION
-    ========================= */
+const counters = document.querySelectorAll(".stat-box h2");
 
-    const counters = document.querySelectorAll(".stat h2");
+const runCounter = () => {
 
-    const runCounter = (counter) => {
+    counters.forEach(counter => {
 
-        const text = counter.innerText;
-        const target = parseInt(text.replace(/\D/g, ""));
+        const target =
+            parseInt(counter.innerText.replace(/\D/g, ""));
 
-        let current = 0;
-        const increment = Math.ceil(target / 100);
+        let count = 0;
+
+        const speed = target / 100;
 
         const update = () => {
 
-            current += increment;
+            count += speed;
 
-            if (current >= target) {
-                counter.innerText = text;
-                return;
-            }
+            if (count < target) {
 
-            if (text.includes("+")) {
-                counter.innerText = current + "+";
+                counter.innerText =
+                    Math.floor(count) + "+";
+
+                requestAnimationFrame(update);
+
             } else {
-                counter.innerText = current;
-            }
 
-            requestAnimationFrame(update);
+                counter.innerText =
+                    target + "+";
+            }
         };
 
         update();
-    };
-
-    const counterObserver = new IntersectionObserver((entries) => {
-
-        entries.forEach(entry => {
-
-            if (entry.isIntersecting) {
-
-                runCounter(entry.target);
-                counterObserver.unobserve(entry.target);
-            }
-
-        });
-
-    }, {
-        threshold: 0.5
     });
+};
 
-    counters.forEach(counter => {
-        counterObserver.observe(counter);
-    });
+/* ==========================================
+   SCROLL REVEAL
+========================================== */
 
-    /* =========================
-       SCROLL REVEAL
-    ========================= */
-
-    const revealElements = document.querySelectorAll(
-        ".card, .stat, .section h2, .section p, .why-card, .process-card"
+const revealElements =
+    document.querySelectorAll(
+        ".card, .team-card, .feature-list, .section-title"
     );
 
-    revealElements.forEach(el => {
-        el.classList.add("reveal");
-    });
-
-    const revealObserver = new IntersectionObserver((entries) => {
-
-        entries.forEach(entry => {
-
-            if (entry.isIntersecting) {
-                entry.target.classList.add("active");
-            }
-
-        });
-
-    }, {
-        threshold: 0.15
-    });
+const revealOnScroll = () => {
 
     revealElements.forEach(el => {
-        revealObserver.observe(el);
+
+        const top =
+            el.getBoundingClientRect().top;
+
+        if (top < window.innerHeight - 100) {
+
+            el.classList.add("show");
+        }
     });
+};
 
-    /* =========================
-       HERO PARALLAX
-    ========================= */
+window.addEventListener(
+    "scroll",
+    revealOnScroll
+);
 
-    const hero = document.querySelector(".about-hero");
+/* ==========================================
+   RUN ON LOAD
+========================================== */
 
-    window.addEventListener("scroll", () => {
+window.addEventListener("load", () => {
 
-        if (!hero) return;
+    runCounter();
 
-        const scroll = window.pageYOffset;
-
-        hero.style.backgroundPositionY = `${scroll * 0.4}px`;
-
-    });
-
+    revealOnScroll();
 });

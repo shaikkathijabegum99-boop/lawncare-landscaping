@@ -1,174 +1,341 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" dir="ltr">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Blog | GreenScape</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | GreenScape</title>
 
-  <link rel="icon" href="../images/favicon.png" />
+    <link rel="icon" href="../images/favicon.png">
 
-  <link rel="stylesheet" href="../global/global.css" />
-  <link rel="stylesheet" href="../css/com.css" />
-  <link rel="stylesheet" href="./blog.css" />
+    <link rel="stylesheet" href="../global/global.css">
+    <link rel="stylesheet" href="../css/com.css">
+    <link rel="stylesheet" href="blog.css">
 
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
 
-<div id="navbar"></div>
+    <!-- Navbar -->
+    <div id="navbar"></div>
 
+    <main>
 
-<section class="blog-hero">
-  <div class="container">
+        <!-- HERO -->
+        <section class="blog-hero">
 
-    <h1><i class="fa-solid fa-leaf"></i> GreenScape Blog</h1>
-    <p>Insights, tips, and modern landscaping ideas</p>
+            <div class="container hero-content">
 
-    <div class="search-box">
-      
-      <input type="text" placeholder="Search articles...">
-      <button class="btn btn-primary">Search</button>
-    </div>
+                <span class="section-badge">
+                    GreenScape Blog
+                </span>
 
-  </div>
-</section>
+                <h1>
+                    Landscaping Tips, Trends & Outdoor Inspiration
+                </h1>
 
+                <p>
+                    Explore expert advice, lawn care guides,
+                    sustainable landscaping ideas, and outdoor
+                    living inspiration from GreenScape professionals.
+                </p>
 
-<section class="featured">
-  <div class="container featured-card">
+            </div>
 
-    <img src="../images/blog1.jpg" alt="Featured Blog">
+        </section>
 
-    <div class="featured-content">
+        <!-- FEATURED POST -->
+        <section class="section">
 
-      <span class="tag"><i class="fa-solid fa-star"></i> Featured</span>
+            <div class="container">
 
-      <h2>Smart Landscaping with AI & Automation</h2>
+                <div class="featured-post">
 
-      <p>
-        Discover how modern AI systems are transforming outdoor design,
-        irrigation, and maintenance for smarter and sustainable gardens.
-      </p>
+                    <div class="featured-image">
+                        <img src="../images/blogs0.jpg"
+                            alt="Featured Blog">
+                    </div>
 
-      <a href="./blogdetail1.html" class="btn btn-primary">
-        Read More <i class="fa-solid fa-arrow-right"></i>
-      </a>
+                    <div class="featured-content">
 
-    </div>
+                        <span class="section-badge">
+                            Featured Article
+                        </span>
 
-  </div>
-</section>
+                        <h2>
+                            10 Landscaping Trends Transforming Outdoor Spaces in 2025
+                        </h2>
 
+                        <p>
+                            Discover the latest trends in eco-friendly
+                            landscaping, smart irrigation systems,
+                            outdoor lighting, and sustainable garden design.
+                        </p>
 
-<section class="blog-section">
-  <div class="container">
+                        <a href="blogdetail0.html"
+                            class="btn btn-primary">
+                            Read Article
+                        </a>
 
-    <h2 class="section-title">Latest Articles</h2>
+                    </div>
 
-    <div class="blog-grid">
+                </div>
 
-      <div class="blog-card">
-        
-          <img src="../images/blog2.jpg" alt="Modern Garden Trends">
+            </div>
 
-          <div class="content">
-            <span><i class="fa-solid fa-palette"></i> Design</span>
-            <h3>Modern Garden Trends</h3>
-            <p>Latest styles in outdoor architecture and luxury gardens.</p>
-            
-      <a href="./blogdetail2.html" class="btn btn-primary">
-        Read More <i class="fa-solid fa-arrow-right"></i>
-      </a>
+        </section>
 
-          </div>
-    
-      </div>
+        <!-- BLOG POSTS -->
+        <section class="section">
 
-      <div class="blog-card">
-        
-          <img src="../images/blog3.jpg" alt="Water Saving Systems">
+            <div class="container">
 
-          <div class="content">
-            <span><i class="fa-solid fa-droplet"></i> Eco</span>
-            <h3>Water Saving Systems</h3>
-            <p>Smart irrigation techniques that reduce water usage.</p>
-            
-      <a href="./blogdetail3.html" class="btn btn-primary">
-        Read More <i class="fa-solid fa-arrow-right"></i>
-      </a>
+                <div class="text-center">
 
-          </div>
-     
-      </div>
+                    <span class="section-badge">
+                        Latest Articles
+                    </span>
 
-      <div class="blog-card">
-      
-          <img src="../images/blog4.jpg" alt="Seasonal Lawn Guide">
+                    <h2>
+                        Recent Blog Posts
+                    </h2>
 
-          <div class="content">
-            <span><i class="fa-solid fa-calendar"></i> Care</span>
-            <h3>Seasonal Lawn Guide</h3>
-            <p>Keep your garden healthy and green all year round.</p>
+                </div>
 
-      <a href="./blogdetail4.html" class="btn btn-primary">
-        Read More <i class="fa-solid fa-arrow-right"></i>
-      </a>
+                <div class="grid-3 blog-grid">
 
-          </div>
-          
-    
+                    <article class="blog-card">
 
-     
-      </div>
+                        <img src="../images/blogs1.jpg"
+                            alt="Blog Post">
 
-    </div>
+                        <div class="blog-content">
 
-  </div>
-</section>
+                            <span class="blog-category">
+                                Lawn Care
+                            </span>
 
+                            <h3>
+                                Essential Lawn Maintenance Tips for Every Season
+                            </h3>
 
-<section class="categories">
-  <div class="container">
+                            <p>
+                                Keep your lawn healthy and green throughout
+                                the year with expert maintenance practices.
+                            </p>
 
-    <h2>Categories</h2>
+                            <a href="blogdetail1.html"
+                                class="read-more-btn">
+                                Read More
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
 
-    <div class="cat-grid">
+                        </div>
 
-      <div class="cat-card"><i class="fa-solid fa-leaf"></i> Landscaping</div>
-      <div class="cat-card"><i class="fa-solid fa-water"></i> Irrigation</div>
-      <div class="cat-card"><i class="fa-solid fa-seedling"></i> Gardening Tips</div>
-      <div class="cat-card"><i class="fa-solid fa-lightbulb"></i> Lighting Ideas</div>
-      <div class="cat-card"><i class="fa-solid fa-vial"></i> Soil Care</div>
+                    </article>
 
-    </div>
+                    <article class="blog-card">
 
-  </div>
-</section>
+                        <img src="../images/blogs2.jpg"
+                            alt="Blog Post">
 
+                        <div class="blog-content">
 
-<section class="newsletter">
-  <div class="container">
+                            <span class="blog-category">
+                                Irrigation
+                            </span>
 
-    <h2><i class="fa-solid fa-envelope"></i> Subscribe to Our Newsletter</h2>
-    <p>Get weekly tips for better outdoor spaces</p>
+                            <h3>
+                                How Smart Irrigation Saves Water and Money
+                            </h3>
 
-    <div class="subscribe">
-      <input type="email" placeholder="Enter your email">
-      <button class="btn btn-primary">Subscribe</button>
-    </div>
+                            <p>
+                                Learn how automated irrigation systems
+                                improve efficiency and reduce water waste.
+                            </p>
 
-  </div>
-</section>
+                            <a href="blogdetail2.html"
+                                class="read-more-btn">
+                                Read More
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
 
+                        </div>
 
-<div id="footer"></div>
+                    </article>
 
-<script src="../global/global.js"></script>
-<script src="../js/component.js"></script>
-<script src="./blog.js"></script>
+                    <article class="blog-card">
+
+                        <img src="../images/blogs3.jpg"
+                            alt="Blog Post">
+
+                        <div class="blog-content">
+
+                            <span class="blog-category">
+                                Garden Design
+                            </span>
+
+                            <h3>
+                                Creating Sustainable Outdoor Spaces
+                            </h3>
+
+                            <p>
+                                Discover practical ways to build beautiful,
+                                environmentally responsible landscapes.
+                            </p>
+
+                            <a href="blogdetail3.html"
+                                class="read-more-btn">
+                                Read More
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                    <article class="blog-card">
+
+                        <img src="../images/blogs4.jpg"
+                            alt="Blog Post">
+
+                        <div class="blog-content">
+
+                            <span class="blog-category">
+                                Outdoor Living
+                            </span>
+
+                            <h3>
+                                Designing Comfortable Outdoor Gathering Areas
+                            </h3>
+
+                            <p>
+                                Create functional outdoor spaces perfect
+                                for relaxation and entertaining guests.
+                            </p>
+
+                            <a href="blogdetail4.html"
+                                class="read-more-btn">
+                                Read More
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                    <article class="blog-card">
+
+                        <img src="../images/blogs5.jpg"
+                            alt="Blog Post">
+
+                        <div class="blog-content">
+
+                            <span class="blog-category">
+                                Sustainability
+                            </span>
+
+                            <h3>
+                                Eco-Friendly Landscaping Ideas for Modern Homes
+                            </h3>
+
+                            <p>
+                                Reduce environmental impact while improving
+                                the beauty of your outdoor space.
+                            </p>
+
+                            <a href="blogdetail5.html"
+                                class="read-more-btn">
+                                Read More
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                    <article class="blog-card">
+
+                        <img src="../images/blogs6.jpg"
+                            alt="Blog Post">
+
+                        <div class="blog-content">
+
+                            <span class="blog-category">
+                                Landscaping
+                            </span>
+
+                            <h3>
+                                Choosing the Right Plants for Your Climate
+                            </h3>
+
+                            <p>
+                                Select plants that thrive in your region
+                                and require less maintenance.
+                            </p>
+
+                            <a href="blogdetail6.html"
+                                class="read-more-btn">
+                                Read More
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- NEWSLETTER -->
+        <section class="newsletter-section">
+
+            <div class="container text-center">
+
+                <span class="section-badge">
+                    Stay Updated
+                </span>
+
+                <h2>
+                    Subscribe To Our Newsletter
+                </h2>
+
+                <p>
+                    Receive landscaping tips, seasonal maintenance
+                    advice, and exclusive GreenScape updates.
+                </p>
+
+                <form class="newsletter-form">
+
+                    <input type="email"
+                        placeholder="Enter your email address"
+                        required>
+
+                    <button type="submit"
+                        class="btn btn-primary">
+                        Subscribe
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <script src="../js/component.js"></script>
+    <script src="../global/global.js"></script>
+    <script src="./blog.js"></script>
 
 </body>
+
 </html>
