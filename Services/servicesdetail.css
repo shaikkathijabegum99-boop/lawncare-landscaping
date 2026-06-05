@@ -1,215 +1,333 @@
-/* ==================================================
-   SERVICE DETAIL PREMIUM STYLES
-================================================== */
+/* ==========================================
+   HERO SECTION
+========================================== */
 
-/* HERO */
-.hero{
-    position:relative;
-    padding:140px 20px 100px;
-    text-align:center;
-    color:#fff;
-    background-size:cover;
-    background-position:center;
+.hero {
+    position: relative;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    background: url("../images/process3.jpg") center/cover no-repeat;
+    color: #fff;
 }
 
-.hero-overlay{
-    position:absolute;
-    inset:0;
-    background:rgba(0,0,0,.65);
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
 }
 
-.hero-content{
-    position:relative;
-    max-width:900px;
-    margin:auto;
-    z-index:2;
+.hero-content {
+    position: relative;
+    max-width: 800px;
+    padding: 40px 20px;
 }
 
-.hero-tag{
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-    padding:8px 14px;
-    border-radius:999px;
-    background:rgba(255,255,255,.1);
-    color:#fff;
-    font-weight:600;
-    margin-bottom:15px;
+.hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    background: rgba(255,255,255,0.15);
+    padding: 8px 14px;
+    border-radius: 999px;
+
+    font-size: 0.85rem;
+    margin-bottom: 15px;
 }
 
-/* SECTION */
-.section{
-    padding:90px 20px;
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: white;
 }
 
-.section h2{
-    font-size:1.8rem;
-    margin-bottom:20px;
-    display:flex;
-    align-items:center;
-    gap:10px;
+.hero p {
+    font-size: 1.05rem;
+    opacity: 0.9;
+    line-height: 1.6;
+    color:white;
 }
 
-.section p{
-    color:var(--text-light);
-    line-height:1.7;
+/* ==========================================
+   SECTIONS
+========================================== */
+
+.section {
+    padding: 80px 20px;
 }
 
-/* GRID */
-.grid-3{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:25px;
-    margin-top:30px;
+.section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
 }
 
-/* CARD */
-.card{
-    background:var(--light);
-    border:1px solid var(--border);
-    padding:25px;
-    border-radius:var(--radius);
-    box-shadow:var(--shadow);
-    transition:.3s ease;
-    text-align:center;
+.section p {
+    color: var(--text-light);
+    line-height: 1.7;
 }
 
-.card:hover{
-    transform:translateY(-8px);
-    box-shadow:var(--shadow-hover);
+/* ==========================================
+   GRID SYSTEM
+========================================== */
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
 }
 
-.card i{
-    color:var(--primary);
-    margin-bottom:12px;
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
 }
 
-/* FEATURES LIST */
-.service-features{
-    margin-top:20px;
-    list-style:none;
+/* ==========================================
+   CARDS
+========================================== */
+
+.card {
+    background: var(--light);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 25px;
+    text-align: center;
+
+    transition: var(--transition);
 }
 
-.service-features li{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    margin-bottom:10px;
-    color:var(--text);
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
 }
 
-.service-features i{
-    color:var(--primary);
+.card i {
+    color: var(--primary);
+    margin-bottom: 10px;
 }
 
-/* CTA */
-.cta{
-    margin-top:60px;
-    padding:60px 20px;
-    text-align:center;
-    background:var(--soft);
-    border-radius:var(--radius);
+/* ==========================================
+   FEATURES LIST
+========================================== */
+
+.service-features {
+    list-style: none;
+    padding: 0;
 }
 
-/* BUTTONS */
-.hero-buttons{
-    display:flex;
-    justify-content:center;
-    gap:15px;
-    margin-top:25px;
+.service-features li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 10px 0;
+    color: var(--text);
+    font-weight: 500;
+
+    transition: var(--transition);
 }
 
-/* ANIMATION */
-.fade-up{
-    opacity:0;
-    transform:translateY(30px);
-    transition:all .6s ease;
+.service-features li:hover {
+    transform: translateX(5px);
 }
 
-.fade-up.show{
-    opacity:1;
-    transform:translateY(0);
+/* ==========================================
+   PRICING
+========================================== */
+
+.pricing-card {
+    text-align: center;
 }
 
-/* PROGRESS BAR */
-.progress-bar{
-    position:fixed;
-    top:0;
-    left:0;
-    height:3px;
-    width:0%;
-    background:var(--primary);
-    z-index:9999;
+.pricing-card h2 {
+    color: var(--primary);
+    margin: 10px 0;
 }
 
-/* BACK TO TOP */
-.back-to-top{
-    position:fixed;
-    bottom:30px;
-    right:30px;
-    width:45px;
-    height:45px;
-    border:none;
-    border-radius:50%;
-    background:var(--primary);
-    color:#fff;
-    display:none;
-    cursor:pointer;
-    z-index:9999;
+.pricing-card.highlight {
+    border: 2px solid var(--primary);
+    transform: scale(1.05);
+    position: relative;
 }
 
-/* RESPONSIVE */
-@media(max-width:992px){
-    .grid-3{
-        grid-template-columns:1fr;
+.pricing-card.highlight::before {
+    content: "MOST POPULAR";
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background: var(--primary);
+    color: #fff;
+
+    padding: 4px 12px;
+    font-size: 0.75rem;
+    border-radius: 999px;
+}
+
+/* ==========================================
+   CTA SECTION
+========================================== */
+
+.cta {
+    padding: 80px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, var(--primary), var(--primary-soft));
+    color: #fff;
+}
+
+.cta p {
+    opacity: 0.9;
+    margin: 10px 0 20px;
+}
+
+/* ==========================================
+   BUTTONS HOVER GLOBAL STYLE
+========================================== */
+
+.btn {
+    transition: var(--transition);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    opacity: 0.95;
+}
+
+/* ==========================================
+   DARK MODE
+========================================== */
+
+body.dark-mode .card {
+    background: var(--secondary-soft);
+    border-color: var(--border);
+}
+
+body.dark-mode .service-features li {
+    color: var(--text);
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 1024px) {
+    .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-2 {
+        grid-template-columns: 1fr;
     }
 }
 
-@media(max-width:768px){
-    .hero{
-        padding:120px 20px 80px;
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
     }
 
-    .hero-buttons{
-        flex-direction:column;
+    .grid-3 {
+        grid-template-columns: 1fr;
     }
-}/* ===============================
-   PRICING SECTION
-=============================== */
 
-.pricing-card{
-    text-align:center;
-    padding:30px;
-    border-radius:var(--radius);
-    transition:.3s ease;
-    position:relative;
+    .pricing-card.highlight {
+        transform: scale(1);
+    }
 }
 
-.pricing-card:hover{
-    transform:translateY(-10px);
+@media (max-width: 480px) {
+    .section {
+        padding: 60px 15px;
+    }
+
+    .hero h1 {
+        font-size: 1.7rem;
+    }
+}/* =========================
+   BENEFITS + USE CASES
+========================= */
+
+.section .card h3 {
+    margin-bottom: 15px;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-.price{
-    font-size:2rem;
-    color:var(--primary);
-    margin:15px 0;
-    font-weight:800;
+.section .card ul {
+    text-align: left;
+}/* =========================
+   SIMPLE CTA (UPDATED COLORS)
+========================= */
+
+.cta-simple {
+    padding: 80px 20px;
+    text-align: center;
+
+    /* new premium gradient */
+    background: linear-gradient(135deg, #0f3d2e, #1b5e20, #2e7d32);
+
+    color: #ffffff;
 }
 
-.pricing-card.highlight{
-    border:2px solid var(--primary);
-    transform:scale(1.05);
+/* Heading */
+.cta-simple h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #ffffff;
 }
 
-.pricing-card.highlight::before{
-    content:"Most Popular";
-    position:absolute;
-    top:-12px;
-    left:50%;
-    transform:translateX(-50%);
-    background:var(--primary);
-    color:#fff;
-    padding:5px 12px;
-    font-size:.75rem;
-    border-radius:999px;
+/* Text */
+.cta-simple p {
+    opacity: 0.9;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: #e8f5e9;
+}
+
+/* Button (clean contrast style) */
+.cta-simple .btn {
+    background: #ffffff;
+    color: #1b5e20;
+    font-weight: 700;
+
+    border-radius: 999px;
+    padding: 12px 26px;
+
+    transition: all 0.3s ease;
+}
+
+.cta-simple .btn:hover {
+    background: #e8f5e9;
+    color: #0f3d2e;
+    transform: translateY(-3px);
+}
+.section,
+.card,
+.pricing-card,
+.cta-simple {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+
+.section.show,
+.card.show,
+.pricing-card.show,
+.cta-simple.show {
+    opacity: 1;
+    transform: translateY(0);
+}.pricing-card.focus {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    transition: 0.3s ease;
+}.cta .btn.clicked,
+.cta-simple .btn.clicked {
+    transform: scale(0.95);
 }

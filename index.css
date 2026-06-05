@@ -1400,8 +1400,7 @@ body{
 ================================================== */
 
 body.dark-mode .section-badge{
-    background:rgba(76,175,80,.12);
-    border:1px solid rgba(76,175,80,.18);
+   
     color:var(--primary);
 }
 

@@ -431,124 +431,149 @@ body.dark-mode .social-links a{
     }
 }
 /* ==========================================
+
+/* ==========================================
    ABOUT COMPANY SECTION
 ========================================== */
 
-.about-company{
-    padding:100px 0;
+.about-company {
+    padding: 100px 0;
 }
 
-.about-company .grid-2{
-    align-items:center;
-    gap:60px;
+.about-company .grid-2 {
+    align-items: center;
+    gap: 60px;
 }
 
 /* Image */
-
 .about-company img,
-.section .grid-2 img{
-    width:100%;
-    border-radius:var(--radius);
-    box-shadow:var(--shadow);
-    object-fit:cover;
+.section .grid-2 img {
+    width: 100%;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    object-fit: cover;
 }
 
 /* Content */
-
 .about-company h2,
-.section .grid-2 h2{
-    margin:15px 0 20px;
+.section .grid-2 h2 {
+    margin: 15px 0 20px;
 }
 
 .about-company p,
-.section .grid-2 p{
-    margin-bottom:18px;
-    line-height:1.8;
+.section .grid-2 p {
+    margin-bottom: 18px;
+    line-height: 1.8;
 }
 
 /* Features */
-
-.feature-list{
-    margin-top:30px;
-    display:grid;
-    gap:15px;
+.feature-list {
+    margin-top: 30px;
+    display: grid;
+    gap: 15px;
 }
 
-.feature-list li{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    color:var(--text);
-    font-weight:500;
+.feature-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text);
+    font-weight: 500;
+    transition: var(--transition);
 }
 
-.feature-list i{
-    color:var(--primary);
-    font-size:1rem;
+.feature-list i {
+    color: var(--primary);
+    font-size: 1rem;
 }
 
-/* Optional hover effect */
-
-.feature-list li:hover{
-    transform:translateX(5px);
-    transition:var(--transition);
-}
-
-/* ==========================================
-   DARK MODE
-========================================== */
-
-body.dark-mode .feature-list li{
-    color:var(--text);
-}
-
-body.dark-mode .grid-2 img{
-    border:1px solid var(--border);
-}
-
-body.dark-mode .feature-list i{
-    color:var(--primary);
+/* hover */
+.feature-list li:hover {
+    transform: translateX(5px);
 }
 
 /* ==========================================
-   RESPONSIVE
+   LARGE DEVICES (>1280px)
 ========================================== */
+@media (min-width: 1280px) {
 
-@media(max-width:1024px){
+    .about-company {
+        padding: 120px 0;
+    }
 
-    .about-company .grid-2,
-    .section .grid-2{
-        gap:40px;
+    .about-company .grid-2 {
+        gap: 70px;
     }
 }
 
-@media(max-width:768px){
+/* ==========================================
+   DESKTOP (1024px - 1279px)
+========================================== */
+@media (min-width: 1024px) and (max-width: 1279px) {
+
+    .about-company {
+        padding: 100px 0;
+    }
+
+    .about-company .grid-2 {
+        gap: 60px;
+    }
+}
+
+/* ==========================================
+   TABLET (640px - 1023px)
+========================================== */
+@media (min-width: 640px) and (max-width: 1023px) {
 
     .about-company,
-    .section{
-        padding:70px 0;
+    .section {
+        padding: 80px 0;
     }
 
-    .feature-list{
-        gap:12px;
+    .about-company .grid-2,
+    .section .grid-2 {
+        gap: 40px;
+        grid-template-columns: 1fr;
     }
 
-    .feature-list li{
-        align-items:flex-start;
+    .section .grid-2 img {
+        margin-bottom: 20px;
     }
 }
 
-@media(max-width:639px){
+/* ==========================================
+   MOBILE (<640px)
+========================================== */
+@media (max-width: 639px) {
 
-    .section .grid-2{
-        grid-template-columns:1fr;
+    .about-company,
+    .section {
+        padding: 60px 0;
     }
 
-    .section .grid-2 img{
-        margin-bottom:20px;
+    .about-company .grid-2,
+    .section .grid-2 {
+        grid-template-columns: 1fr;
+        gap: 25px;
     }
 
-    .section .grid-2 h2{
-        font-size:1.8rem;
+    .section .grid-2 h2 {
+        font-size: 1.6rem;
     }
+
+    .feature-list {
+        gap: 12px;
+    }
+
+    .feature-list li {
+        align-items: flex-start;
+        font-size: 0.95rem;
+    }
+}.about-company img,
+.section .grid-2 img {
+    width: 100%;
+    max-height: 380px;   /* adjust size here */
+    object-fit: cover;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
 }

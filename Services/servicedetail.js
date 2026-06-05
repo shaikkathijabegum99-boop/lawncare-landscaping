@@ -1,80 +1,78 @@
-/* ==================================================
-   SERVICE DETAIL PREMIUM INTERACTIONS
-================================================== */
+// =========================
+// SERVICE DETAIL PAGE JS
+// GreenScape
+// =========================
 
-document.addEventListener("DOMContentLoaded", () => {
 
-    /* ===============================
-       SCROLL PROGRESS BAR
-    =============================== */
-    const progress = document.createElement("div");
-    progress.className = "progress-bar";
-    document.body.appendChild(progress);
+// -------------------------
+// SMOOTH SCROLL (anchor links)
+// -------------------------
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener("click", (e) => {
+        const targetId = link.getAttribute("href");
 
-    window.addEventListener("scroll", () => {
-        const scrollTop = window.scrollY;
-        const docHeight = document.body.scrollHeight - window.innerHeight;
-        const scrolled = (scrollTop / docHeight) * 100;
-        progress.style.width = scrolled + "%";
-    });
-
-    /* ===============================
-       BACK TO TOP BUTTON
-    =============================== */
-    const btn = document.createElement("button");
-    btn.className = "back-to-top";
-    btn.innerHTML = '<i class="fa-solid fa-arrow-up"></i>';
-    document.body.appendChild(btn);
-
-    window.addEventListener("scroll", () => {
-        if (window.scrollY > 400) {
-            btn.style.display = "block";
-        } else {
-            btn.style.display = "none";
-        }
-    });
-
-    btn.addEventListener("click", () => {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-    });
-
-    /* ===============================
-       FADE UP ANIMATION ON SCROLL
-    =============================== */
-    const elements = document.querySelectorAll(".card, h2, p, .cta");
-
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("fade-up", "show");
-            }
-        });
-    }, { threshold: 0.1 });
-
-    elements.forEach(el => {
-        el.classList.add("fade-up");
-        observer.observe(el);
-    });
-
-    /* ===============================
-       SMOOTH SCROLL FOR ANCHORS
-    =============================== */
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", e => {
-            e.preventDefault();
-
-            const target = document.querySelector(anchor.getAttribute("href"));
+        if (targetId.length > 1) {
+            const target = document.querySelector(targetId);
 
             if (target) {
-                window.scrollTo({
-                    top: target.offsetTop - 80,
-                    behavior: "smooth"
+                e.preventDefault();
+
+                target.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
                 });
             }
-        });
+        }
+    });
+});
+
+
+// -------------------------
+// CTA BUTTON EFFECT
+// -------------------------
+document.querySelectorAll(".cta .btn, .cta-simple .btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+        btn.classList.add("clicked");
+
+        setTimeout(() => {
+            btn.classList.remove("clicked");
+        }, 200);
+    });
+});
+
+
+// -------------------------
+// PRICING CARD HOVER FOCUS
+// -------------------------
+const pricingCards = document.querySelectorAll(".pricing-card");
+
+pricingCards.forEach(card => {
+    card.addEventListener("mouseenter", () => {
+        pricingCards.forEach(c => c.classList.remove("focus"));
+        card.classList.add("focus");
     });
 
+    card.addEventListener("mouseleave", () => {
+        card.classList.remove("focus");
+    });
 });
+
+
+// -------------------------
+// SCROLL REVEAL ANIMATION
+// -------------------------
+const revealItems = document.querySelectorAll(
+    ".section, .card, .pricing-card, .cta-simple"
+);
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+    });
+}, {
+    threshold: 0.15
+});
+
+revealItems.forEach(el => observer.observe(el));

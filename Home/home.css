@@ -57,7 +57,7 @@
 
     border-radius:50px;
 
-    background:rgba(255,255,255,.12);
+   
     color:#fff;
 }
 
@@ -353,7 +353,7 @@
 }
 
 .team-card img{
-    width:120px;
+    width:100px;
     height:120px;
     border-radius:50%;
     object-fit:cover;
@@ -808,7 +808,7 @@ body.dark-mode .faq{
     gap:10px;
     padding:10px 20px;
 
-    background:rgba(255,255,255,.12);
+    
     color:#fff;
     border-radius:50px;
 }
@@ -1012,7 +1012,7 @@ body.dark-mode .faq{
     justify-content:center;
 
     border-radius:50%;
-    background:#16a34a;
+    background:var(--primary);
     color:#fff;
 
     font-size:1.1rem;
@@ -1192,6 +1192,7 @@ body.dark-mode .grid-2 img{
 .cta .btn-primary:hover{
     transform:translateY(-3px);
     box-shadow:0 12px 25px rgba(0,0,0,.15);
+  
 }
 
 .cta .btn-secondary{
@@ -1241,4 +1242,237 @@ body.dark-mode .cta{
     .cta h2{
         font-size:2rem;
     }
+}
+.newsletter-section {
+    padding: 100px 20px 90px;
+}
+/* =========================
+   NEWSLETTER SECTION
+========================= */
+
+.newsletter-section {
+    padding: 80px 20px;
+    color: var(--text);
+    text-align: center;
+}
+
+/* Container */
+.newsletter-section .container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Heading */
+.newsletter-section h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+    color: var(--text);
+}
+
+/* Paragraph */
+.newsletter-section p {
+    font-size: 1rem;
+    color: var(--text-light);
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* Form */
+.newsletter-form {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Input */
+.newsletter-form input {
+    flex: 1;
+    min-width: 250px;
+
+    padding: 14px 16px;
+
+    border: 1px solid var(--border);
+    border-radius: 999px;
+
+    outline: none;
+
+    font-size: 1rem;
+
+    background: var(--light);
+    color: var(--text);
+
+    transition: var(--transition);
+}
+
+/* Placeholder FIX (important) */
+.newsletter-form input::placeholder {
+    color: var(--text-light);
+    opacity: 1;
+}
+
+/* Input focus */
+.newsletter-form input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(27, 94, 32, 0.15);
+}
+
+/* Button */
+.newsletter-form .btn-primary {
+    padding: 14px 26px;
+
+    border: none;
+    border-radius: 999px;
+
+    background: var(--primary);
+    color: #fff;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+}
+
+.newsletter-form .btn-primary:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .newsletter-section h2 {
+        font-size: 1.6rem;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+    }
+
+    .newsletter-form input,
+    .newsletter-form .btn-primary {
+        width: 100%;
+    }
+}
+/* =========================
+   CARD BASE TRANSITION
+========================= */
+
+.service-card,
+.blog-card,
+.card,
+.process-card,
+.cert-card,
+.team-card,
+.testimonial-card {
+    transition: all 0.3s ease;
+    transform: translateY(0);
+}
+
+/* =========================
+   CARD HOVER EFFECT
+========================= */
+
+.service-card:hover,
+.blog-card:hover,
+.card:hover,
+.process-card:hover,
+.cert-card:hover,
+.team-card:hover,
+.testimonial-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================
+   IMAGE HOVER ZOOM
+========================= */
+
+.service-card img,
+.blog-card img,
+.gallery-item img,
+.team-card img {
+    transition: transform 0.4s ease;
+}
+
+.service-card:hover img,
+.blog-card:hover img,
+.gallery-item:hover img,
+.team-card:hover img {
+    transform: scale(1.05);
+}
+
+/* =========================
+   READ MORE BUTTON
+========================= */
+
+.read-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    color: var(--primary);
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+}
+
+/* Hover move */
+.read-more-btn:hover {
+    color: var(--primary-hover);
+    transform: translateX(5px);
+}
+
+/* Arrow animation */
+.read-more-btn i {
+    transition: transform 0.3s ease;
+}
+
+.read-more-btn:hover i {
+    transform: translateX(4px);
+}
+
+/* =========================
+   OPTIONAL PREMIUM BORDER HOVER
+========================= */
+
+.service-card:hover,
+.blog-card:hover,
+.card:hover {
+    border-color: rgba(27, 94, 32, 0.2);
+}
+
+/* =========================
+   TEAM SOCIAL HOVER (extra polish)
+========================= */
+
+.team-card .social-links a {
+    transition: all 0.3s ease;
+}
+
+.team-card .social-links a:hover {
+    color: var(--primary);
+    transform: translateY(-3px);
+}
+
+/* =========================
+   GALLERY HOVER
+========================= */
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.gallery-item img {
+    transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.08);
 }

@@ -652,3 +652,116 @@ body.dark-mode .cta{
         font-size:2rem;
     }
 }
+/* =========================
+   GLOBAL BUTTON BASE
+========================= */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 12px 22px;
+
+    border-radius: 999px;
+    border: none;
+
+    font-weight: 600;
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+    position: relative;
+
+    overflow: hidden;
+}
+
+/* =========================
+   PRIMARY BUTTON
+========================= */
+
+.btn-primary {
+    background: var(--primary);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: var(--primary-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================
+   SECONDARY BUTTON
+========================= */
+
+.btn-secondary {
+    background: transparent;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+}
+
+.btn-secondary:hover {
+    background: var(--primary);
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================
+   CLICK EFFECT (ripple feel)
+========================= */
+
+.btn:active {
+    transform: scale(0.96);
+}
+
+/* =========================
+   ICON BUTTON SUPPORT
+========================= */
+
+.btn i {
+    transition: transform 0.3s ease;
+}
+
+.btn:hover i {
+    transform: translateX(3px);
+}
+/* =========================
+   DARK MODE BUTTONS
+========================= */
+
+body.dark-mode .btn-primary {
+    background: var(--primary);
+    color: #0b0f0c;
+}
+
+body.dark-mode .btn-primary:hover {
+    background: var(--primary-hover);
+    color: #fff;
+}
+
+/* Secondary button in dark mode */
+body.dark-mode .btn-secondary {
+    background: transparent;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+}
+
+body.dark-mode .btn-secondary:hover {
+    background: var(--primary);
+    color: #0b0f0c;
+}
+
+/* Optional: better shadow in dark mode */
+body.dark-mode .btn-primary:hover,
+body.dark-mode .btn-secondary:hover {
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
+}
+
+/* Optional: improve button clarity in dark UI */
+body.dark-mode .btn {
+    transition: all 0.3s ease;
+}
