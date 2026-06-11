@@ -1,12 +1,12 @@
-// =========================
-// SERVICE DETAIL PAGE JS
-// GreenScape
-// =========================
 
 
-// -------------------------
-// SMOOTH SCROLL (anchor links)
-// -------------------------
+
+
+
+
+
+
+
 document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener("click", (e) => {
         const targetId = link.getAttribute("href");
@@ -27,9 +27,9 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 });
 
 
-// -------------------------
-// CTA BUTTON EFFECT
-// -------------------------
+
+
+
 document.querySelectorAll(".cta .btn, .cta-simple .btn").forEach(btn => {
     btn.addEventListener("click", () => {
         btn.classList.add("clicked");
@@ -41,9 +41,9 @@ document.querySelectorAll(".cta .btn, .cta-simple .btn").forEach(btn => {
 });
 
 
-// -------------------------
-// PRICING CARD HOVER FOCUS
-// -------------------------
+
+
+
 const pricingCards = document.querySelectorAll(".pricing-card");
 
 pricingCards.forEach(card => {
@@ -58,9 +58,9 @@ pricingCards.forEach(card => {
 });
 
 
-// -------------------------
-// SCROLL REVEAL ANIMATION
-// -------------------------
+
+
+
 const revealItems = document.querySelectorAll(
     ".section, .card, .pricing-card, .cta-simple"
 );

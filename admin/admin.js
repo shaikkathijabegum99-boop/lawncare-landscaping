@@ -2,228 +2,155 @@
 
 
 
-const sidebar = document.getElementById("sidebar");
+
+
+
+
 const menuToggle = document.getElementById("menuToggle");
-const sidebarClose = document.getElementById("sidebarClose");
+const sidebar = document.querySelector(".sidebar");
 
-if (menuToggle) {
-  menuToggle.addEventListener("click", () => {
-    sidebar.classList.add("active");
-  });
+if (menuToggle && sidebar) {
+    menuToggle.addEventListener("click", () => {
+        sidebar.classList.toggle("active");
+    });
 }
-
-if (sidebarClose) {
-  sidebarClose.addEventListener("click", () => {
-    sidebar.classList.remove("active");
-  });
-}
-
 
 
 document.addEventListener("click", (e) => {
-  if (
-    window.innerWidth <= 991 &&
-    sidebar &&
-    !sidebar.contains(e.target) &&
-    menuToggle &&
-    !menuToggle.contains(e.target)
-  ) {
-    sidebar.classList.remove("active");
-  }
-});
-
-
-
-
-
-const darkToggle = document.getElementById("darkToggle");
-
-function applyTheme(theme) {
-  document.documentElement.setAttribute("data-theme", theme);
-
-  if (darkToggle) {
-    darkToggle.innerHTML =
-      theme === "dark"
-        ? '<i class="fas fa-sun"></i><span>Light Mode</span>'
-        : '<i class="fas fa-moon"></i><span>Dark Mode</span>';
-  }
-}
-
-const savedTheme = localStorage.getItem("theme") || "light";
-applyTheme(savedTheme);
-
-if (darkToggle) {
-  darkToggle.addEventListener("click", () => {
-    const currentTheme =
-      document.documentElement.getAttribute("data-theme");
-
-    const newTheme =
-      currentTheme === "dark" ? "light" : "dark";
-
-    applyTheme(newTheme);
-    localStorage.setItem("theme", newTheme);
-  });
-}
-
-
-
-
-
-const rtlToggle = document.getElementById("rtlToggle");
-
-function applyDirection(direction) {
-  document.documentElement.setAttribute("dir", direction);
-
-  if (rtlToggle) {
-    rtlToggle.innerHTML =
-      direction === "rtl"
-        ? '<i class="fas fa-left-right"></i><span>LTR</span>'
-        : '<i class="fas fa-right-left"></i><span>RTL</span>';
-  }
-}
-
-const savedDirection =
-  localStorage.getItem("direction") || "ltr";
-
-applyDirection(savedDirection);
-
-if (rtlToggle) {
-  rtlToggle.addEventListener("click", () => {
-    const currentDirection =
-      document.documentElement.getAttribute("dir");
-
-    const newDirection =
-      currentDirection === "rtl" ? "ltr" : "rtl";
-
-    applyDirection(newDirection);
-    localStorage.setItem("direction", newDirection);
-  });
-}
-
-
-
-
-
-const navLinks = document.querySelectorAll(".sidebar-nav a");
-
-navLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    navLinks.forEach((item) =>
-      item.classList.remove("active")
-    );
-
-    link.classList.add("active");
-  });
-});
-
-
-
-
-
-const counters = document.querySelectorAll(
-  ".metric-card h3, .stat-card h3"
-);
-
-counters.forEach((counter) => {
-  const text = counter.innerText;
-
-  const value = parseInt(
-    text.replace(/[^0-9]/g, "")
-  );
-
-  if (!value) return;
-
-  let current = 0;
-  const speed = Math.max(10, value / 80);
-
-  const updateCounter = () => {
-    current += speed;
-
-    if (current < value) {
-      counter.innerText = Math.floor(current);
-      requestAnimationFrame(updateCounter);
-    } else {
-      counter.innerText = text;
+    if (sidebar && menuToggle) {
+        if (!sidebar.contains(e.target) && !menuToggle.contains(e.target)) {
+            if (window.innerWidth <= 1024) {
+                sidebar.classList.remove("active");
+            }
+        }
     }
-  };
-
-  updateCounter();
 });
 
 
 
 
+const menuLinks = document.querySelectorAll(".menu a");
 
-const notificationBtn = document.querySelector(
-  ".topbar-btn .fa-bell"
-);
-
-if (notificationBtn) {
-  const badge = document.createElement("span");
-
-  badge.className = "notification-badge";
-  badge.textContent = "4";
-
-  notificationBtn.parentElement.style.position =
-    "relative";
-
-  notificationBtn.parentElement.appendChild(badge);
-}
+menuLinks.forEach(link => {
+    link.addEventListener("click", () => {
+        menuLinks.forEach(l => l.classList.remove("active"));
+        link.classList.add("active");
+    });
+});
 
 
 
 
+const actionCards = document.querySelectorAll(".action-card");
 
-const dateContainer =
-  document.getElementById("currentDate");
+actionCards.forEach(card => {
+    card.addEventListener("click", () => {
+        card.classList.add("clicked");
 
-if (dateContainer) {
-  const today = new Date();
+        setTimeout(() => {
+            card.classList.remove("clicked");
+        }, 200);
+    });
+});
 
-  dateContainer.textContent =
-    today.toLocaleDateString("en-US", {
-      weekday: "long",
-      day: "numeric",
-      month: "long",
-      year: "numeric",
+
+
+
+const tableRows = document.querySelectorAll("table tr");
+
+tableRows.forEach(row => {
+    row.addEventListener("mouseenter", () => {
+        row.style.background = "rgba(46,125,50,0.05)";
+    });
+
+    row.addEventListener("mouseleave", () => {
+        row.style.background = "transparent";
+    });
+});
+
+
+
+
+const themeToggle = document.getElementById("themeToggle");
+
+if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+
+        const icon = themeToggle.querySelector("i");
+
+        if (document.body.classList.contains("dark-mode")) {
+            icon.classList.remove("fa-moon");
+            icon.classList.add("fa-sun");
+        } else {
+            icon.classList.remove("fa-sun");
+            icon.classList.add("fa-moon");
+        }
     });
 }
 
 
 
 
-
-const clock = document.getElementById("liveClock");
-
-function updateClock() {
-  if (!clock) return;
-
-  const now = new Date();
-
-  clock.textContent =
-    now.toLocaleTimeString();
+const style = document.createElement("style");
+style.innerHTML = `
+.action-card.clicked {
+    transform: scale(0.96);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
-
-setInterval(updateClock, 1000);
-updateClock();
-
+`;
+document.head.appendChild(style);
 
 
 
 
-window.addEventListener("load", () => {
-  const progressBars =
-    document.querySelectorAll(
-      ".progress-bar span"
-    );
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function (e) {
+        e.preventDefault();
 
-  progressBars.forEach((bar) => {
-    const width = bar.style.width;
+        const target = document.querySelector(this.getAttribute("href"));
 
-    bar.style.width = "0";
+        if (target) {
+            target.scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+    });
+});
 
-    setTimeout(() => {
-      bar.style.width = width;
-    }, 300);
-  });
+const revenueChart = new Chart(document.getElementById("revenueChart"), {
+    type: "line",
+    data: {
+        labels: ["Jan","Feb","Mar","Apr","May","Jun"],
+        datasets: [{
+            label: "Revenue (₹)",
+            data: [12000, 19000, 15000, 22000, 30000, 42000],
+            borderColor: "#1b5e20",
+            backgroundColor: "rgba(27,94,32,0.2)",
+            fill: true,
+            tension: 0.4
+        }]
+    }
+});
+
+
+const serviceChart = new Chart(document.getElementById("serviceChart"), {
+    type: "doughnut",
+    data: {
+        labels: ["Irrigation","Design","Maintenance","Lighting"],
+        datasets: [{
+            data: [40, 25, 20, 15],
+            backgroundColor: ["#1b5e20","#2e7d32","#bfa46f","#111827"]
+        }]
+    }
+});const rtlBtn = document.getElementById("rtlToggle");
+
+rtlBtn?.addEventListener("click", () => {
+    const html = document.documentElement;
+
+    if (html.getAttribute("dir") === "rtl") {
+        html.setAttribute("dir", "ltr");
+    } else {
+        html.setAttribute("dir", "rtl");
+    }
 });

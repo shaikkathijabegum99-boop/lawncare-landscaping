@@ -6,39 +6,39 @@
      CORE BRAND (Natural Premium Green)
   ========================================================= */
 
-  --primary: #1b5e20;        /* deep forest green (main identity) */
-  --primary-hover: #144d18; /* darker interaction state */
-  --primary-soft: #2e7d32;  /* natural grass green */
+  --primary: #1b5e20;        
+  --primary-hover: #144d18; 
+  --primary-soft: #2e7d32;  
 
   /* =========================================================
      SECONDARY (Earth + Professional Dark)
   ========================================================= */
 
-  --secondary: #111827;      /* deep charcoal (premium base) */
-  --secondary-soft: #1f2933; /* soft dark panels */
+  --secondary: #111827;      
+  --secondary-soft: #1f2933; 
 
   /* =========================================================
      ACCENT (Subtle Luxury Gold - NOT flashy)
   ========================================================= */
 
-  --accent: #bfa46f;         /* muted earth gold */
-  --accent-soft: #e6d3a3;    /* soft highlight gold */
+  --accent: #bfa46f;         
+  --accent-soft: #e6d3a3;    
 
   /* =========================================================
      BACKGROUNDS (Organic Feel)
   ========================================================= */
 
   --light: #ffffff;
-  --soft: #f7f6f2;           /* warm off-white */
-  --muted: #eef2e9;          /* natural garden mist */
-  --border: #d9e2d3;         /* soft plant-grey border */
+  --soft:#f5fbf5;           
+  --muted: #eef2e9;          
+  --border: #d9e2d3;         
 
   /* =========================================================
      TEXT
   ========================================================= */
 
-  --text: #1a1f1c;           /* natural deep black-green */
-  --text-light: #5f6b63;     /* muted leaf gray */
+  --text: #1a1f1c;           
+  --text-light: #5f6b63;     
 
   /* =========================================================
      STATUS
@@ -75,13 +75,13 @@
 ========================================================= */
 
 body.dark-mode {
-  --primary: #4caf50;        /* fresh plant glow */
+  --primary: #4caf50;        
   --primary-hover: #43a047;
 
-  --secondary: #0b0f0c;      /* deep natural night */
+  --secondary: #0b0f0c;      
   --secondary-soft: #121a14;
 
-  --accent: #d6b25e;         /* warm moonlight gold */
+  --accent: #1b5e20;    ;         
   --accent-soft: #f3e2a0;
 
   --light: #0b0f0c;
@@ -340,7 +340,7 @@ html[dir="rtl"] .text-center {
    RESPONSIVE BREAKPOINTS
 ========================================================= */
 
-/* 📱 MOBILE < 640px */
+
 @media (max-width: 639px) {
   .section {
     padding: 70px 0;
@@ -357,7 +357,7 @@ html[dir="rtl"] .text-center {
   }
 }
 
-/* 📟 TABLET 640px - 1024px */
+
 @media (min-width: 640px) and (max-width: 1024px) {
   .grid-3,
   .grid-4 {
@@ -369,14 +369,14 @@ html[dir="rtl"] .text-center {
   }
 }
 
-/* 💻 DESKTOP 1024px - 1280px */
+
 @media (min-width: 1024px) and (max-width: 1280px) {
   .container {
     width: min(94%, 1200px);
   }
 }
 
-/* 🖥 LARGE > 1280px */
+
 @media (min-width: 1280px) {
   .container {
     max-width: 1280px;
@@ -387,7 +387,7 @@ html[dir="rtl"] .text-center {
    GLOBAL DARK MODE SUPPORT
 ========================================================= */
 
-/* Sections */
+
 section,
 .section,
 main {
@@ -395,7 +395,7 @@ main {
     color: var(--text);
 }
 
-/* Alternate sections */
+
 .stats-section,
 .faq-section,
 .values-section,
@@ -407,29 +407,29 @@ main {
     background: var(--soft);
 }
 
-/* Cards */
+
 .card,
 .team-card,
 .stat-card,
 .faq-item {
     background: var(--light);
-    color: var(--text);
+    color: var(--primary);
     border: 1px solid var(--border);
     box-shadow: var(--shadow);
 }
 
-/* Headings */
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-    color: var(--text);
+    color: var(--primary);
 }
 
 
-/* Inputs */
+
 input,
 textarea,
 select {
@@ -443,7 +443,7 @@ textarea::placeholder {
     color: var(--text-light);
 }
 
-/* Tables */
+
 table {
     background: var(--light);
 }
@@ -451,10 +451,10 @@ table {
 th,
 td {
     border-color: var(--border);
-    color: var(--text);
+   
 }
 
-/* FAQ */
+
 .faq-question {
     background: var(--light);
     color: var(--text);
@@ -465,20 +465,20 @@ td {
     color: var(--text-light);
 }
 
-/* Footer */
+
 .site-footer,
 .footer {
     background: var(--secondary);
     color: #fff;
 }
 
-/* Images */
+
 img {
     max-width: 100%;
     display: block;
 }
 
-/* Smooth transition */
+
 * {
     transition:
         background-color .3s ease,
@@ -575,7 +575,7 @@ img {
 .cta h2{
     color:#fff;
     margin:20px 0;
-    font-size:clamp(2rem,4vw,3.5rem);
+    
 }
 
 .cta p{
@@ -688,7 +688,7 @@ body.dark-mode .cta{
 }
 
 .btn-primary:hover {
-    background: var(--primary-hover);
+
     transform: translateY(-3px);
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
 }
@@ -699,8 +699,8 @@ body.dark-mode .cta{
 
 .btn-secondary {
     background: transparent;
-    color: var(--primary);
-    border: 1px solid var(--primary);
+   
+    border: 1px solid white;
 }
 
 .btn-secondary:hover {
@@ -735,7 +735,7 @@ body.dark-mode .cta{
 
 body.dark-mode .btn-primary {
     background: var(--primary);
-    color: #0b0f0c;
+    color: #ffffff;
 }
 
 body.dark-mode .btn-primary:hover {
@@ -743,25 +743,60 @@ body.dark-mode .btn-primary:hover {
     color: #fff;
 }
 
-/* Secondary button in dark mode */
+
 body.dark-mode .btn-secondary {
     background: transparent;
-    color: var(--primary);
+  
     border: 1px solid var(--primary);
 }
 
 body.dark-mode .btn-secondary:hover {
     background: var(--primary);
-    color: #0b0f0c;
+    color: #ffffff;
 }
 
-/* Optional: better shadow in dark mode */
+
 body.dark-mode .btn-primary:hover,
 body.dark-mode .btn-secondary:hover {
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
 }
 
-/* Optional: improve button clarity in dark UI */
+
 body.dark-mode .btn {
     transition: all 0.3s ease;
+}
+/* =========================================================
+   GLOBAL CARD STYLING
+========================================================= */
+
+.card{
+    background: #fff;
+
+    border: 1px solid rgba(34, 139, 34, .20);
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    box-shadow:
+    0 4px 15px rgba(0,0,0,.04);
+
+    transition: all .3s ease;
+}
+
+.card:hover{
+    transform: translateY(-5px);
+
+    border-color: var(--primary);
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.08);
+}
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+body.dark-mode .card{
+    border-color: rgba(255,255,255,.12);
 }

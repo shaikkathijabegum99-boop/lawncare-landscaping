@@ -1,333 +1,772 @@
-/* ==========================================
+/* ==================================================
    HERO SECTION
-========================================== */
+================================================== */
 
-.hero {
-    position: relative;
-    min-height: 60vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+.hero{
+    position:relative;
+    min-height:80vh;
 
-    background: url("../images/process3.jpg") center/cover no-repeat;
-    color: #fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.55),
+        rgba(0,0,0,.55)
+    ),
+    url("../images/process3.jpg")
+    center/cover no-repeat;
+
+    color:#fff;
 }
 
-.hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.55);
+.hero-content{
+    position:relative;
+    z-index:2;
+
+    max-width:850px;
+    padding:40px 20px;
 }
 
-.hero-content {
-    position: relative;
-    max-width: 800px;
-    padding: 40px 20px;
+.hero-tag{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    padding:10px 18px;
+    margin-bottom:20px;
+
+    border-radius:999px;
+ 
+    text-shadow:
+        0 0 5px rgba(255,255,255,0.8),
+        0 0 10px rgba(255,255,255,0.6),
+        0 0 20px rgba(255,255,255,0.4);
+ 
+    color:#fff;
 }
 
-.hero-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-
-    background: rgba(255,255,255,0.15);
-    padding: 8px 14px;
-    border-radius: 999px;
-
-    font-size: 0.85rem;
-    margin-bottom: 15px;
+.hero h1{
+    color:#fff;
+    margin-bottom:20px;
+    
 }
 
-.hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-    color: white;
+.hero p{
+    max-width:700px;
+    margin:auto;
+
+    color:rgba(255,255,255,.9);
+    font-size:1.05rem;
 }
 
-.hero p {
-    font-size: 1.05rem;
-    opacity: 0.9;
-    line-height: 1.6;
-    color:white;
+/* ==================================================
+   SECTION TITLES
+================================================== */
+
+.section h2{
+    margin-bottom:15px;
+}
+
+.section-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+
+    margin-bottom:15px;
+
+    font-size:.85rem;
+    font-weight:700;
+    letter-spacing:1px;
+    text-transform:uppercase;
+
+    color:var(--primary);
+}
+
+.section-badge::before{
+    content:"";
+    width:40px;
+    height:2px;
+    border-radius:50px;
+    background:var(--primary);
+}
+
+/* ==================================================
+   OVERVIEW
+================================================== */
+
+.overview-section{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+}
+
+.overview-content h2{
+    margin-bottom:20px;
+}
+
+.overview-content p{
+    margin-bottom:18px;
+    color:var(--text-light);
+    line-height:1.8;
+}
+
+.overview-image{
+    overflow:hidden;
+    border-radius:var(--radius-lg);
+
+    box-shadow:var(--shadow);
+
+    transition:.4s ease;
+}
+
+.overview-image:hover{
+    box-shadow:var(--shadow-hover);
+}
+
+.overview-image img{
+    width:100%;
+    height:450px;
+
+    object-fit:cover;
+
+    transition:.4s ease;
+}
+
+.overview-image:hover img{
+    transform:scale(1.05);
+}
+
+/* ==================================================
+   FEATURE / TECHNOLOGY / PROCESS CARDS
+================================================== */
+
+.feature-card,
+.tech-card,
+.process-card{
+    padding:0;
+    overflow:hidden;
+
+    display:flex;
+    flex-direction:column;
+    height:100%;
+}
+
+.feature-card img,
+.tech-card img,
+.process-card img{
+    width:100%;
+    height:230px;
+
+    object-fit:cover;
+
+    transition:.4s ease;
+}
+
+.feature-card:hover img,
+.tech-card:hover img,
+.process-card:hover img{
+    transform:scale(1.05);
+}
+
+.feature-content,
+.tech-content,
+.process-content{
+    padding:25px;
+    flex:1;
+}
+
+.feature-content h3,
+.tech-content h3,
+.process-content h3{
+    margin-bottom:12px;
+}
+
+.feature-content p,
+.tech-content p,
+.process-content p{
+    color:var(--text-light);
+}
+
+.feature-card:hover,
+.tech-card:hover,
+.process-card:hover{
+    transform:translateY(-8px);
+    box-shadow:var(--shadow-hover);
+}
+
+/* ==================================================
+   TECHNOLOGY SECTION
+================================================== */
+
+.technology-section{
+    background:var(--soft);
+}
+
+/* ==================================================
+   BENEFITS & USE CASES
+================================================== */
+
+.service-features{
+    margin-top:20px;
+}
+
+.service-features li{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    margin-bottom:12px;
+
+    color:var(--text-light);
+}
+
+.service-features li i{
+    color:var(--primary);
+}
+
+/* ==================================================
+   PRICING
+================================================== */
+
+.pricing-card{
+    text-align:center;
+
+    padding:35px 25px;
+
+    display:flex;
+    flex-direction:column;
+    height:100%;
+}
+
+.pricing-card h3{
+    margin-bottom:15px;
+}
+
+.pricing-card h2{
+    color:var(--primary);
+    margin-bottom:15px;
+}
+
+.pricing-card p{
+    margin-bottom:25px;
+    flex:1;
+}
+
+.pricing-card .btn{
+    margin-top:auto;
+}
+
+.pricing-card.highlight{
+    border:2px solid var(--primary);
+    transform:translateY(-10px);
+}
+
+.pricing-card:hover{
+    transform:translateY(-8px);
+}
+
+.pricing-card.highlight:hover{
+    transform:translateY(-14px);
+}
+
+/* ==================================================
+   CTA
+================================================== */
+
+.cta-simple{
+    padding:100px 20px;
+    text-align:center;
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--primary),
+        var(--primary-soft)
+    );
+}
+
+.cta-simple h2{
+    color:#fff;
+    margin-bottom:20px;
+}
+
+.cta-simple p{
+    max-width:700px;
+    margin:0 auto 30px;
+
+    color:rgba(255,255,255,.9);
+}
+
+.cta-simple .btn-primary{
+    background:#fff;
+    color:var(--primary);
+}
+
+.cta-simple .btn-primary:hover{
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 12px 25px rgba(0,0,0,.15);
+}
+
+/* ==================================================
+   DARK MODE
+================================================== */
+
+body.dark-mode .technology-section{
+    background:var(--muted);
+}
+
+body.dark-mode .feature-card,
+body.dark-mode .tech-card,
+body.dark-mode .process-card,
+body.dark-mode .pricing-card{
+    background:var(--secondary-soft);
+    border-color:var(--border);
+}
+
+body.dark-mode .overview-image{
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.35);
+}
+
+body.dark-mode .overview-content p,
+body.dark-mode .feature-content p,
+body.dark-mode .tech-content p,
+body.dark-mode .process-content p,
+body.dark-mode .service-features li{
+    color:var(--text-light);
+}
+
+body.dark-mode .pricing-card.highlight{
+    border-color:var(--primary);
+}
+
+body.dark-mode .cta-simple{
+    background:
+    linear-gradient(
+        135deg,
+        #1b5e20,
+        #2e7d32
+    );
 }
 
 /* ==========================================
-   SECTIONS
+   BENEFITS & USE CASES
 ========================================== */
 
-.section {
-    padding: 80px 20px;
+.benefits-section .card,
+.grid-2 .card{
+    text-align:center;
+    padding:35px 30px;
 }
 
-.section h2 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
+.benefits-section .card h3,
+.grid-2 .card h3{
+    margin-bottom:25px;
+    color:var(--primary);
 }
 
-.section p {
-    color: var(--text-light);
-    line-height: 1.7;
+.service-features{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:14px;
+
+    margin-top:20px;
+    padding:0;
+}
+
+.service-features li{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    min-width:240px;
+    max-width:320px;
+
+    text-align:left;
+    color:var(--text-light);
+
+    font-size:0.95rem;
+}
+
+.service-features li i{
+    color:var(--primary);
+    flex-shrink:0;
+    font-size:1rem;
+}
+
+
+
+.grid-2 .card:hover{
+    transform:translateY(-5px);
+}
+
+
+
+body.dark-mode .grid-2 .card{
+    background:var(--secondary-soft);
+    border-color:var(--border);
+}
+
+body.dark-mode .service-features li{
+    color:var(--text-light);
+}
+/* ==========================================
+   SECTION SPACING IMPROVEMENTS
+========================================== */
+
+.section{
+    padding:100px 0;
+}
+
+.section h2{
+    margin-bottom:25px;
+}
+
+.section-subtitle{
+    margin:15px auto 50px;
 }
 
 /* ==========================================
-   GRID SYSTEM
+   OVERVIEW CONTENT
 ========================================== */
 
-.grid-2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    align-items: center;
+.overview-content{
+    padding:20px;
 }
 
-.grid-3 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+.overview-content h2{
+    margin-bottom:25px;
+}
+
+.overview-content h3{
+    margin-top:30px;
+    margin-bottom:15px;
+}
+
+.overview-content p{
+    margin-bottom:18px;
 }
 
 /* ==========================================
-   CARDS
+   FEATURES
 ========================================== */
 
-.card {
-    background: var(--light);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 25px;
-    text-align: center;
-
-    transition: var(--transition);
+.feature-content{
+    padding:30px;
 }
 
-.card:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--shadow-hover);
+.feature-content h3{
+    margin-bottom:15px;
 }
 
-.card i {
-    color: var(--primary);
-    margin-bottom: 10px;
+.feature-content p{
+    line-height:1.7;
 }
 
 /* ==========================================
-   FEATURES LIST
+   TECHNOLOGY
 ========================================== */
 
-.service-features {
-    list-style: none;
-    padding: 0;
+.tech-content{
+    padding:30px;
 }
 
-.service-features li {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-    padding: 10px 0;
-    color: var(--text);
-    font-weight: 500;
-
-    transition: var(--transition);
+.tech-content h3{
+    margin-bottom:15px;
 }
 
-.service-features li:hover {
-    transform: translateX(5px);
+/* ==========================================
+   PROCESS
+========================================== */
+
+.process-content{
+    padding:30px;
+}
+
+.process-content h3{
+    margin-bottom:15px;
+}
+
+/* ==========================================
+   BENEFITS & USE CASES
+========================================== */
+
+.center-title{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.centered-features{
+    max-width:300px;
+    margin:0 auto;
+}
+
+.centered-features li{
+    padding:8px 0;
 }
 
 /* ==========================================
    PRICING
 ========================================== */
 
-.pricing-card {
-    text-align: center;
+.pricing-card{
+    padding:40px 30px;
 }
 
-.pricing-card h2 {
-    color: var(--primary);
-    margin: 10px 0;
+.pricing-card h3{
+    margin-bottom:15px;
 }
 
-.pricing-card.highlight {
-    border: 2px solid var(--primary);
-    transform: scale(1.05);
-    position: relative;
+.pricing-card h2{
+    margin-bottom:20px;
 }
 
-.pricing-card.highlight::before {
-    content: "MOST POPULAR";
-    position: absolute;
-    top: -12px;
-    left: 50%;
-    transform: translateX(-50%);
+.pricing-card p{
+    margin-bottom:25px;
+}
 
-    background: var(--primary);
-    color: #fff;
-
-    padding: 4px 12px;
-    font-size: 0.75rem;
-    border-radius: 999px;
+.pricing-card .btn{
+    margin-top:10px;
 }
 
 /* ==========================================
-   CTA SECTION
+   CTA
 ========================================== */
 
-.cta {
-    padding: 80px 20px;
-    text-align: center;
-    background: linear-gradient(135deg, var(--primary), var(--primary-soft));
-    color: #fff;
+.cta-simple{
+    padding:120px 20px;
 }
 
-.cta p {
-    opacity: 0.9;
-    margin: 10px 0 20px;
+.cta-simple h2{
+    margin-bottom:20px;
+}
+
+.cta-simple p{
+    margin-bottom:35px;
 }
 
 /* ==========================================
-   BUTTONS HOVER GLOBAL STYLE
+   CARD SPACING
 ========================================== */
 
-.btn {
-    transition: var(--transition);
+.card{
+    padding:30px;
 }
 
-.btn:hover {
-    transform: translateY(-3px);
-    opacity: 0.95;
+.feature-card,
+.tech-card,
+.process-card{
+    padding:0;
+}
+/* ==========================================
+   RESPONSIVE DESIGN
+========================================== */
+
+/* ==========================================
+   LARGE DESKTOP (>1280px)
+========================================== */
+
+@media (min-width:1281px){
+
+    .container{
+        max-width:1280px;
+        margin:auto;
+    }
+
+    .hero-content{
+        max-width:950px;
+    }
+
+    .gallery-item img{
+        height:320px;
+    }
+
+    .comparison-card img{
+        height:480px;
+    }
 }
 
 /* ==========================================
-   DARK MODE
+   DESKTOP (1024px - 1280px)
 ========================================== */
 
-body.dark-mode .card {
-    background: var(--secondary-soft);
-    border-color: var(--border);
-}
+@media (min-width:1024px) and (max-width:1280px){
 
-body.dark-mode .service-features li {
-    color: var(--text);
+    .grid-2{
+        gap:50px;
+    }
+
+    .grid-3{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .grid-4{
+        grid-template-columns:repeat(4,1fr);
+    }
+
+    .gallery-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
 }
 
 /* ==========================================
-   RESPONSIVE
+   TABLET (640px - 1024px)
 ========================================== */
 
-@media (max-width: 1024px) {
-    .grid-3 {
-        grid-template-columns: repeat(2, 1fr);
+@media (min-width:640px) and (max-width:1023px){
+
+    .hero-premium{
+        min-height:auto;
+        padding:120px 20px 80px;
     }
 
-    .grid-2 {
-        grid-template-columns: 1fr;
+    .hero-content{
+        max-width:700px;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .grid-2,
+    .overview-section{
+        grid-template-columns:1fr;
+        gap:40px;
+    }
+
+    .grid-3{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .grid-4{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .gallery-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .check-list{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .feature-list{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .overview-image img{
+        height:350px;
+    }
+
+    .comparison-card img{
+        height:350px;
+    }
+
+    .newsletter-form{
+        flex-direction:column;
+    }
+
+    .newsletter-form button{
+        width:100%;
     }
 }
 
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2rem;
+/* ==========================================
+   MOBILE (<640px)
+========================================== */
+
+@media (max-width:639px){
+
+    .hero-premium{
+        min-height:auto;
+        padding:110px 15px 70px;
     }
 
-    .grid-3 {
-        grid-template-columns: 1fr;
+    .hero-content h1{
+        font-size:2rem;
     }
 
-    .pricing-card.highlight {
-        transform: scale(1);
-    }
-}
-
-@media (max-width: 480px) {
-    .section {
-        padding: 60px 15px;
+    .hero-content p{
+        font-size:.95rem;
     }
 
-    .hero h1 {
-        font-size: 1.7rem;
+    .hero-buttons{
+        flex-direction:column;
+        gap:15px;
     }
-}/* =========================
-   BENEFITS + USE CASES
-========================= */
 
-.section .card h3 {
-    margin-bottom: 15px;
-    color: var(--primary);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
+    .hero-buttons .btn{
+        width:100%;
+    }
 
-.section .card ul {
-    text-align: left;
-}/* =========================
-   SIMPLE CTA (UPDATED COLORS)
-========================= */
+    .hero-features{
+        flex-direction:column;
+        gap:12px;
+    }
 
-.cta-simple {
-    padding: 80px 20px;
-    text-align: center;
+    .grid-2,
+    .grid-3,
+    .grid-4,
+    .overview-section,
+    .gallery-grid{
+        grid-template-columns:1fr;
+    }
 
-    /* new premium gradient */
-    background: linear-gradient(135deg, #0f3d2e, #1b5e20, #2e7d32);
+    .check-list,
+    .feature-list{
+        grid-template-columns:1fr;
+    }
 
-    color: #ffffff;
-}
+    .overview-image img{
+        height:250px;
+    }
 
-/* Heading */
-.cta-simple h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-    color: #ffffff;
-}
+    .gallery-item img{
+        height:220px;
+    }
 
-/* Text */
-.cta-simple p {
-    opacity: 0.9;
-    margin-bottom: 20px;
-    line-height: 1.6;
-    color: #e8f5e9;
-}
+    .comparison-card img{
+        height:250px;
+    }
 
-/* Button (clean contrast style) */
-.cta-simple .btn {
-    background: #ffffff;
-    color: #1b5e20;
-    font-weight: 700;
+    .blog-card img,
+    .cert-card img,
+    .feature-card img,
+    .tech-card img,
+    .process-card img{
+        height:180px;
+    }
 
-    border-radius: 999px;
-    padding: 12px 26px;
+    .team-card img{
+        width:110px;
+        height:110px;
+    }
 
-    transition: all 0.3s ease;
-}
+    .newsletter-card{
+        padding:35px 20px;
+    }
 
-.cta-simple .btn:hover {
-    background: #e8f5e9;
-    color: #0f3d2e;
-    transform: translateY(-3px);
-}
-.section,
-.card,
-.pricing-card,
-.cta-simple {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.6s ease;
-}
+    .newsletter-form{
+        flex-direction:column;
+    }
 
-.section.show,
-.card.show,
-.pricing-card.show,
-.cta-simple.show {
-    opacity: 1;
-    transform: translateY(0);
-}.pricing-card.focus {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-    transition: 0.3s ease;
-}.cta .btn.clicked,
-.cta-simple .btn.clicked {
-    transform: scale(0.95);
+    .newsletter-form button{
+        width:100%;
+    }
+
+    .section-title h2{
+        font-size:1.8rem;
+    }
+
+    .cta{
+        padding:90px 20px;
+    }
 }

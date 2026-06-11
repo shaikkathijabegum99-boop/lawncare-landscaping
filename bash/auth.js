@@ -1,13 +1,13 @@
-// ===============================
-// GREENSCAPE AUTH JS
-// Login + Signup Features
-// ===============================
+
+
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    // =========================
-    // DARK MODE TOGGLE
-    // =========================
+
+
+
     const themeToggle = document.getElementById("themeToggle");
 
     themeToggle?.addEventListener("click", () => {
@@ -25,9 +25,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    // =========================
-    // RTL / LTR TOGGLE
-    // =========================
+
+
+
     const rtlToggle = document.getElementById("rtlToggle");
 
     rtlToggle?.addEventListener("click", () => {
@@ -41,9 +41,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    // =========================
-    // SHOW / HIDE PASSWORD
-    // =========================
+
+
+
     const toggleIcons = document.querySelectorAll(".toggle-password");
 
     toggleIcons.forEach(icon => {
@@ -65,9 +65,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    // =========================
-    // SIGNUP PASSWORD MATCH CHECK
-    // =========================
+
+
+
     const signupForm = document.querySelector("form");
 
     if (signupForm && document.getElementById("confirmPassword")) {
@@ -89,9 +89,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    // =========================
-    // LOGIN FORM HANDLING
-    // =========================
+
+
+
     if (signupForm && !document.getElementById("confirmPassword")) {
 
         signupForm.addEventListener("submit", (e) => {

@@ -1,81 +1,35 @@
-document.addEventListener("DOMContentLoaded", () => {
+/* ==========================================
+   NEWSLETTER FORM
+========================================== */
 
-    // =========================
-    // FAQ ACCORDION
-    // =========================
-    const faqItems = document.querySelectorAll(".faq-item");
+const newsletterForm = document.querySelector(".newsletter-form");
 
-    faqItems.forEach(item => {
-        const question = item.querySelector(".faq-question");
+if (newsletterForm) {
 
-        question.addEventListener("click", () => {
+    newsletterForm.addEventListener("submit", function (e) {
 
-            // close other items
-            faqItems.forEach(el => {
-                if (el !== item) {
-                    el.classList.remove("active");
-                }
-            });
+        e.preventDefault();
 
-            // toggle current
-            item.classList.toggle("active");
-        });
+        const emailInput =
+            newsletterForm.querySelector("input[type='email']");
+
+        const email = emailInput.value.trim();
+
+        const emailPattern =
+            /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailPattern.test(email)) {
+
+            alert("Please enter a valid email address.");
+            emailInput.focus();
+            return;
+
+        }
+
+        alert("🎉 Thank you for subscribing to GreenScape!");
+
+        emailInput.value = "";
+
     });
 
-
-    // =========================
-    // NEWSLETTER FORM
-    // =========================
-    const newsletterForm = document.querySelector(".newsletter-form");
-
-    if (newsletterForm) {
-        newsletterForm.addEventListener("submit", (e) => {
-            e.preventDefault();
-
-            const emailInput = newsletterForm.querySelector("input");
-
-            const email = emailInput.value.trim();
-
-            if (!email) {
-                alert("⚠️ Please enter your email");
-                return;
-            }
-
-            if (!validateEmail(email)) {
-                alert("❌ Please enter a valid email");
-                return;
-            }
-
-            alert("✅ Subscribed successfully!");
-
-            emailInput.value = "";
-        });
-    }
-
-
-    // =========================
-    // EMAIL VALIDATION FUNCTION
-    // =========================
-    function validateEmail(email) {
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    }
-
-
-    // =========================
-    // SMOOTH SCROLL (optional UX upgrade)
-    // =========================
-    document.querySelectorAll("a[href^='#']").forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-
-            const target = document.querySelector(this.getAttribute("href"));
-
-            if (target) {
-                target.scrollIntoView({
-                    behavior: "smooth"
-                });
-            }
-        });
-    });
-
-});
+}

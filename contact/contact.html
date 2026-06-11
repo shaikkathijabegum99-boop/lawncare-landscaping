@@ -17,20 +17,21 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 <body>
 
-<!-- NAVBAR -->
+
 <div id="navbar"></div>
 
-<!-- HERO -->
+
 <section class="contact-hero">
 
-    <div class="hero-content">
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-content">
 
         <span class="hero-tag">
-            <i class="fa-solid fa-envelope"></i>
             Contact GreenScape
         </span>
 
-        <h1>Let’s Build Your Dream Outdoor Space</h1>
+        <h1>Let's Build Your Dream Outdoor Space</h1>
 
         <p>
             Reach out to our landscaping experts for smart irrigation,
@@ -39,12 +40,10 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
         <div class="hero-buttons">
             <a href="#contact" class="btn btn-primary">
-                <i class="fa-solid fa-paper-plane"></i>
                 Send Message
             </a>
 
             <a href="../services/services.html" class="btn btn-secondary">
-                <i class="fa-solid fa-list"></i>
                 View Services
             </a>
         </div>
@@ -53,148 +52,149 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 </section>
 
-<!-- CONTACT SECTION -->
+
 <section class="section" id="contact">
 
-<div class="container contact-grid">
+    <div class="container">
 
-    <!-- FORM -->
-    <div class="contact-form-box">
+        <div class="contact-grid">
 
-        <span class="section-badge">
-            Get In Touch
-        </span>
+            
+            <div class="contact-form-box card">
 
-        <h2>
-            <i class="fa-solid fa-paper-plane"></i>
-            Send Us a Message
-        </h2>
+                <span class="section-badge">
+                    Get In Touch
+                </span>
 
-        <form class="contact-form">
+                <h2>Send Us a Message</h2>
 
-            <div class="input-row">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
+                <p class="section-desc">
+                    Have a question or project in mind? Fill out the form below
+                    and our team will contact you as soon as possible.
+                </p>
+
+                <form class="contact-form">
+
+                    <div class="input-row">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+
+                    <input type="text" placeholder="Subject">
+
+                    <textarea rows="6" placeholder="Your Message"></textarea>
+
+                    <button type="submit" class="btn btn-primary">
+                        Send Message
+                    </button>
+
+                </form>
+
             </div>
 
-            <input type="text" placeholder="Subject">
+            
+            <div class="contact-info card">
 
-            <textarea rows="6" placeholder="Your Message"></textarea>
+                <span class="section-badge">
+                    Contact Info
+                </span>
 
-            <button type="submit" class="btn btn-primary">
-                <i class="fa-solid fa-paper-plane"></i>
-                Send Message
-            </button>
+                <h2>Reach Us</h2>
 
-        </form>
+                <p class="section-desc">
+                    We are always happy to discuss your landscaping needs,
+                    answer questions, and provide professional guidance.
+                </p>
+
+                <div class="info-list">
+
+                    <div class="info-card">
+                        <h4>Address</h4>
+                        <p>GreenScape HQ, Andhra Pradesh, India</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h4>Phone</h4>
+                        <p>+91 98765 43210</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h4>Email</h4>
+                        <p>support@greenscape.com</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h4>Working Hours</h4>
+                        <p>Monday - Saturday<br>9:00 AM - 6:00 PM</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
 
     </div>
-
-    <!-- INFO -->
-    <div class="contact-info">
-
-        <span class="section-badge">
-            Contact Info
-        </span>
-
-        <h2>
-            <i class="fa-solid fa-address-card"></i>
-            Reach Us
-        </h2>
-
-        <div class="info-card">
-            <i class="fa-solid fa-location-dot"></i>
-            <div>
-                <h4>Address</h4>
-                <p>GreenScape HQ, Andhra Pradesh, India</p>
-            </div>
-        </div>
-
-        <div class="info-card">
-            <i class="fa-solid fa-phone"></i>
-            <div>
-                <h4>Phone</h4>
-                <p>+91 98765 43210</p>
-            </div>
-        </div>
-
-        <div class="info-card">
-            <i class="fa-solid fa-envelope"></i>
-            <div>
-                <h4>Email</h4>
-                <p>support@greenscape.com</p>
-            </div>
-        </div>
-
-        <div class="info-card">
-            <i class="fa-solid fa-clock"></i>
-            <div>
-                <h4>Working Hours</h4>
-                <p>Mon - Sat: 9:00 AM - 6:00 PM</p>
-            </div>
-        </div>
-
-    </div>
-
-</div>
 
 </section>
 
-<!-- MAP -->
+
 <section class="section">
 
-<div class="container">
+    <div class="container">
 
-    <span class="section-badge">
-        Location
-    </span>
+        <span class="section-badge">
+            Location
+        </span>
 
-    <h2>
-        <i class="fa-solid fa-map"></i>
-        Find Us on Map
-    </h2>
+        <h2>Find Us on Map</h2>
 
-    <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18..."
-        height="350"
-        style="width:100%; border:0; border-radius:12px;"
-        loading="lazy">
-    </iframe>
+        <div class="map-wrapper">
 
-</div>
+            <iframe
+                src="https://maps.google.com/maps?q=Andhra%20Pradesh&t=&z=10&ie=UTF8&iwloc=&output=embed"
+                loading="lazy">
+            </iframe>
 
-</section>
-
-<!-- CTA -->
-<section class="cta">
-
-<div class="container">
-
-    <h2>Ready to Transform Your Garden?</h2>
-
-    <p>
-        Contact GreenScape today and start building your perfect outdoor space.
-    </p>
-
-    <div class="hero-buttons">
-
-        <a href="../services/services.html" class="btn btn-secondary">
-            <i class="fa-solid fa-leaf"></i>
-            Explore Services
-        </a>
-
-        <a href="#contact" class="btn btn-primary">
-            <i class="fa-solid fa-paper-plane"></i>
-            Contact Now
-        </a>
+        </div>
 
     </div>
 
-</div>
+</section>
+
+
+<section class="cta">
+
+    <div class="container text-center">
+
+        <span class="section-badge">
+            Get Started
+        </span>
+
+        <h2>Ready to Transform Your Garden?</h2>
+
+        <p>
+            Contact GreenScape today and start building a beautiful,
+            sustainable, and smart outdoor environment.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="../services/services.html" class="btn btn-secondary">
+                Explore Services
+            </a>
+
+            <a href="#contact" class="btn btn-primary">
+                Contact Now
+            </a>
+
+        </div>
+
+    </div>
 
 </section>
 
-<!-- FOOTER -->
+
 <div id="footer"></div>
 
 <script src="../global/global.js"></script>
