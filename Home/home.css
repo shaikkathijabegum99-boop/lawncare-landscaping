@@ -54,6 +54,7 @@
     color:#fff;
     margin-bottom:25px;
     line-height:1.1;
+    font-size: 2.2rem;
 }
 
 .hero-content p{
@@ -1187,7 +1188,7 @@ body.dark-mode .newsletter-card{
     }
 
     .hero-content h1{
-        font-size:1.5rem;
+        font-size:2.2rem;
     }
 
     .newsletter-card{

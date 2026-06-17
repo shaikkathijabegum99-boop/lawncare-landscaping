@@ -416,7 +416,7 @@ body.dark-mode .site-header {
 .site-footer{
     background:#f5fbf5;
     color:var(--text);
-    padding-top:80px;
+    padding-top:50px;
     overflow:hidden;
     border-top:1px solid #dcefdc;
 }

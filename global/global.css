@@ -169,11 +169,16 @@ select {
    TYPOGRAPHY
 ========================================================= */
 
-h1, h2, h3, h4, h5 {
+  h3, h4, h5 {
   line-height: 1.2;
   font-weight: 700;
 }
-
+h1{
+  font-size: 2.2rem;
+}
+h2{
+  font-size: 1.5rem;
+}
 p {
   color: var(--text-light);
 }
@@ -800,3 +805,35 @@ body.dark-mode .btn {
 body.dark-mode .card{
     border-color: rgba(255,255,255,.12);
 }
+.section-badge{
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    color: var(--primary);
+
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.section-badge::before,
+.section-badge::after{
+    content: "";
+    width: 35px;
+    height: 2px;
+    background: var(--primary);
+    border-radius: 10px;
+}
+
+body.dark-mode .section-badge{
+    color: var(--accent);
+}
+
+body.dark-mode .section-badge::before,
+body.dark-mode .section-badge::after{
+    background: var(--accent);
+}
+
+

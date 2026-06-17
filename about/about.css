@@ -542,7 +542,7 @@ body.dark-mode .stats-section{
     }
 
     .about-hero h1{
-        font-size:4rem;
+        font-size:2.2rem;
     }
 
     .about-company img{
@@ -575,7 +575,7 @@ body.dark-mode .stats-section{
     }
 
     .about-hero h1{
-        font-size:3.2rem;
+        font-size:2.2rem;
     }
 
     .about-company img{
@@ -774,4 +774,24 @@ body.dark-mode .stats-section{
     .cta h2{
         font-size:1.8rem;
     }
+}/* ==========================================
+   TIMELINE SECTION
+========================================== */
+
+.timeline-section{
+    padding:100px 0;
+
+    background:linear-gradient(
+        180deg,
+        #f8fcf8 0%,
+        #eef8f0 100%
+    );
+}
+
+body.dark-mode .timeline-section{
+    background:linear-gradient(
+        180deg,
+        #0f1711 0%,
+        #16231a 100%
+    );
 }
