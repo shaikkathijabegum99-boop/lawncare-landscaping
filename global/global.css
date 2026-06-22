@@ -831,9 +831,6 @@ body.dark-mode .btn {
     border-radius: 10px;
 }
 
-body.dark-mode .section-badge{
-    color: var(--accent);
-}
 
 body.dark-mode .section-badge::before,
 body.dark-mode .section-badge::after{
