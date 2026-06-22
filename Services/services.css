@@ -775,4 +775,99 @@ body.dark-mode .mt-3 .card p{
     .cta p{
         font-size:.85rem;
     }
+}/* ==========================================
+   PREMIUM GLOW HOVER
+========================================== */
+
+.service-card,
+.why-section .card,
+.faq-item{
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+}
+
+/* Hover Effect */
+.service-card:hover,
+.why-section .card:hover,
+.faq-item:hover{
+    transform: translateY(-10px);
+
+    border-color: rgba(34,139,34,.25);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.12),
+        0 0 15px rgba(34,139,34,.18);
+}
+
+/* Service Images */
+.service-card img{
+    transition:
+        transform .4s ease,
+        box-shadow .35s ease;
+}
+
+.service-card:hover img{
+    transform: scale(1.05);
+
+    box-shadow:
+        0 0 15px rgba(34,139,34,.18);
+}
+
+/* Why Choose Icons */
+.why-section .card i{
+    transition:
+        transform .35s ease,
+        color .35s ease;
+}
+
+.why-section .card:hover i{
+    transform: scale(1.15);
+    color: var(--primary);
+}
+
+/* Read More Button */
+.read-more-btn{
+    transition: all .35s ease;
+}
+
+.service-card:hover .read-more-btn{
+    gap: 14px;
+}
+
+/* FAQ */
+.faq-question{
+    transition: color .35s ease;
+}
+
+.faq-item:hover .faq-question{
+    color: var(--primary);
+}
+
+.faq-icon{
+    transition: transform .35s ease;
+}
+
+.faq-item:hover .faq-icon{
+    transform: scale(1.1);
+}
+
+/* ==========================================
+   DARK MODE
+========================================== */
+
+body.dark-mode .service-card:hover,
+body.dark-mode .why-section .card:hover,
+body.dark-mode .faq-item:hover{
+    border-color: rgba(34,139,34,.25);
+
+    box-shadow:
+        0 18px 40px rgba(0,0,0,.35),
+        0 0 18px rgba(34,139,34,.22);
+}
+
+body.dark-mode .why-section .card:hover i,
+body.dark-mode .faq-item:hover .faq-question{
+    color: var(--primary);
 }

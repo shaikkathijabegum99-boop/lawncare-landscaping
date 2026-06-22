@@ -1,26 +1,55 @@
-/* ==================================================
-   HERO SECTION
-================================================== */
+/* =========================================================
+   BREADCRUMB
+========================================================= */
+
+.breadcrumb-section{
+    padding:120px 0 20px;
+    background: var(--soft);
+}
+
+.breadcrumb{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:12px;
+
+    font-size:.95rem;
+}
+
+.breadcrumb a{
+    color:var(--primary);
+    font-weight:600;
+}
+
+.breadcrumb span{
+    color:var(--text-light);
+}
+
+/* =========================================================
+   HERO
+========================================================= */
 
 .hero{
     position:relative;
-    min-height:80vh;
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    text-align:center;
+    padding:120px 0;
 
     background:
     linear-gradient(
         rgba(0,0,0,.55),
         rgba(0,0,0,.55)
     ),
-    url("../images/process3.jpg")
-    center/cover no-repeat;
+    url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1600&q=80");
 
-    color:#fff;
+    background-size:cover;
+    background-position:center;
+
+    overflow:hidden;
+}
+
+.hero-overlay{
+    position:absolute;
+    inset:0;
 }
 
 .hero-content{
@@ -28,258 +57,272 @@
     z-index:2;
 
     max-width:850px;
-    padding:40px 20px;
+
+    text-align:center;
 }
 
 .hero-tag{
     display:inline-flex;
     align-items:center;
-    gap:8px;
+    gap:10px;
 
     padding:10px 18px;
-    margin-bottom:20px;
 
     border-radius:999px;
- 
-    text-shadow:
-        0 0 5px rgba(255,255,255,0.8),
-        0 0 10px rgba(255,255,255,0.6),
-        0 0 20px rgba(255,255,255,0.4);
- 
+
+    background:rgba(255,255,255,.15);
+
     color:#fff;
+
+    backdrop-filter:blur(10px);
+
+    margin-bottom:25px;
 }
 
 .hero h1{
     color:#fff;
-    margin-bottom:20px;
-    
+
+
+    margin-bottom:25px;
 }
 
 .hero p{
-    max-width:700px;
-    margin:auto;
-
     color:rgba(255,255,255,.9);
-    font-size:1.05rem;
+
+    max-width:700px;
+
+    margin:0 auto 35px;
+
+    font-size:1.1rem;
 }
 
-/* ==================================================
-   SECTION TITLES
-================================================== */
-
-.section h2{
-    margin-bottom:15px;
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    gap:16px;
+    flex-wrap:wrap;
 }
 
-.section-badge{
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
+/* =========================================================
+   HERO STATS
+========================================================= */
 
-    margin-bottom:15px;
+.hero-stats{
+    margin-top:60px;
 
-    font-size:.85rem;
-    font-weight:700;
-    letter-spacing:1px;
-    text-transform:uppercase;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
 
-    color:var(--primary);
+    gap:20px;
 }
 
-.section-badge::before{
-    content:"";
-    width:40px;
-    height:2px;
-    border-radius:50px;
-    background:var(--primary);
+.stat-item{
+    background:rgba(255,255,255,.12);
+
+    border:1px solid rgba(255,255,255,.2);
+
+    backdrop-filter:blur(12px);
+
+    padding:25px;
+
+    border-radius:var(--radius);
 }
 
-/* ==================================================
+.stat-item h3{
+    color:#fff;
+
+    font-size:2rem;
+
+    margin-bottom:8px;
+}
+
+.stat-item p{
+    color:rgba(255,255,255,.85);
+}
+
+/* =========================================================
    OVERVIEW
-================================================== */
+========================================================= */
 
 .overview-section{
     display:grid;
     grid-template-columns:1fr 1fr;
+
     gap:60px;
+
     align-items:center;
 }
 
-.overview-content h2{
-    margin-bottom:20px;
-}
-
 .overview-content p{
-    margin-bottom:18px;
-    color:var(--text-light);
-    line-height:1.8;
-}
-
-.overview-image{
-    overflow:hidden;
-    border-radius:var(--radius-lg);
-
-    box-shadow:var(--shadow);
-
-    transition:.4s ease;
-}
-
-.overview-image:hover{
-    box-shadow:var(--shadow-hover);
+    margin-bottom:20px;
 }
 
 .overview-image img{
     width:100%;
-    height:450px;
+    height:500px;
 
     object-fit:cover;
 
-    transition:.4s ease;
+    border-radius:var(--radius-lg);
+
+    box-shadow:var(--shadow);
 }
 
-.overview-image:hover img{
-    transform:scale(1.05);
-}
-
-/* ==================================================
-   FEATURE / TECHNOLOGY / PROCESS CARDS
-================================================== */
-
-.feature-card,
-.tech-card,
-.process-card{
-    padding:0;
-    overflow:hidden;
-
-    display:flex;
-    flex-direction:column;
-    height:100%;
-}
-
-.feature-card img,
-.tech-card img,
-.process-card img{
-    width:100%;
-    height:230px;
-
-    object-fit:cover;
-
-    transition:.4s ease;
-}
-
-.feature-card:hover img,
-.tech-card:hover img,
-.process-card:hover img{
-    transform:scale(1.05);
-}
-
-.feature-content,
-.tech-content,
-.process-content{
-    padding:25px;
-    flex:1;
-}
-
-.feature-content h3,
-.tech-content h3,
-.process-content h3{
-    margin-bottom:12px;
-}
-
-.feature-content p,
-.tech-content p,
-.process-content p{
-    color:var(--text-light);
-}
-
-.feature-card:hover,
-.tech-card:hover,
-.process-card:hover{
-    transform:translateY(-8px);
-    box-shadow:var(--shadow-hover);
-}
-
-/* ==================================================
-   TECHNOLOGY SECTION
-================================================== */
-
-.technology-section{
-    background:var(--soft);
-}
-
-/* ==================================================
-   BENEFITS & USE CASES
-================================================== */
+/* =========================================================
+   FEATURES LIST
+========================================================= */
 
 .service-features{
-    margin-top:20px;
+    margin-top:30px;
+
+    display:grid;
+    gap:16px;
 }
 
 .service-features li{
     display:flex;
-    align-items:center;
-    gap:10px;
-
-    margin-bottom:12px;
+    align-items:flex-start;
+    gap:14px;
 
     color:var(--text-light);
 }
 
-.service-features li i{
+.service-features i{
     color:var(--primary);
+
+    margin-top:4px;
 }
 
-/* ==================================================
-   PRICING
-================================================== */
+/* =========================================================
+   FEATURE / TECH CARDS
+========================================================= */
 
-.pricing-card{
+.feature-card,
+.tech-card{
+    padding:0;
+}
+
+.feature-card img,
+.tech-card img{
+    width:100%;
+    height:240px;
+
+    object-fit:cover;
+}
+
+.feature-content{
+    padding:28px;
+}
+
+.feature-content h3{
+    margin-bottom:14px;
+}
+
+.feature-content p{
+    margin:0;
+}
+
+/* =========================================================
+   PROCESS
+========================================================= */
+
+.process-card{
     text-align:center;
+}
 
-    padding:35px 25px;
+.step-number{
+    width:70px;
+    height:70px;
+
+    margin:0 auto 25px;
 
     display:flex;
-    flex-direction:column;
-    height:100%;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    color:#fff;
+
+    font-weight:800;
+    font-size:1.3rem;
 }
 
-.pricing-card h3{
+.process-card h3{
     margin-bottom:15px;
 }
 
-.pricing-card h2{
-    color:var(--primary);
-    margin-bottom:15px;
+/* =========================================================
+   FAQ
+========================================================= */
+
+.faq-wrapper{
+    max-width:900px;
+    margin:50px auto 0;
+
+    display:grid;
+    gap:20px;
 }
 
-.pricing-card p{
-    margin-bottom:25px;
-    flex:1;
+.faq-item{
+    padding:0;
+    overflow:hidden;
 }
 
-.pricing-card .btn{
-    margin-top:auto;
+.faq-question{
+    width:100%;
+
+    padding:24px 30px;
+
+    border:none;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    cursor:pointer;
+
+    font-size:1rem;
+    font-weight:700;
+
+    background:var(--light);
 }
 
-.pricing-card.highlight{
-    border:2px solid var(--primary);
-    transform:translateY(-10px);
+.faq-question i{
+    transition:.3s;
 }
 
-.pricing-card:hover{
-    transform:translateY(-8px);
+.faq-answer{
+    max-height:0;
+
+    overflow:hidden;
+
+    transition:max-height .35s ease;
+
+    padding:0 30px;
 }
 
-.pricing-card.highlight:hover{
-    transform:translateY(-14px);
+.faq-answer p{
+    padding-bottom:25px;
 }
 
-/* ==================================================
+.faq-item.active .faq-answer{
+    max-height:300px;
+}
+
+.faq-item.active .faq-question i{
+    transform:rotate(45deg);
+}
+
+/* =========================================================
    CTA
-================================================== */
+========================================================= */
 
 .cta-simple{
-    padding:100px 20px;
+    padding:120px 20px;
+
     text-align:center;
 
     background:
@@ -292,14 +335,25 @@
 
 .cta-simple h2{
     color:#fff;
-    margin-bottom:20px;
+
+    margin:25px 0;
 }
 
 .cta-simple p{
-    max-width:700px;
-    margin:0 auto 30px;
-
     color:rgba(255,255,255,.9);
+
+    max-width:700px;
+
+    margin:0 auto 35px;
+}
+
+.cta-simple .section-badge{
+    color:#fff;
+}
+
+.cta-simple .section-badge::before,
+.cta-simple .section-badge::after{
+    background:#fff;
 }
 
 .cta-simple .btn-primary{
@@ -307,466 +361,836 @@
     color:var(--primary);
 }
 
-.cta-simple .btn-primary:hover{
-    transform:translateY(-3px);
-
-    box-shadow:
-    0 12px 25px rgba(0,0,0,.15);
+.cta-simple .btn-secondary{
+    border:2px solid rgba(255,255,255,.6);
+    color:#fff;
 }
 
-/* ==================================================
-   DARK MODE
-================================================== */
-
-body.dark-mode .technology-section{
-    background:var(--muted);
+.cta-simple .btn-secondary:hover{
+    background:#fff;
+    color:var(--primary);
 }
 
-body.dark-mode .feature-card,
-body.dark-mode .tech-card,
-body.dark-mode .process-card,
-body.dark-mode .pricing-card{
-    background:var(--secondary-soft);
-    border-color:var(--border);
+/* =========================================================
+   SCROLL TOP
+========================================================= */
+
+.scroll-top-btn{
+    position:fixed;
+
+    right:25px;
+    bottom:25px;
+
+    width:50px;
+    height:50px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    color:#fff;
+
+    cursor:pointer;
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:.3s;
+
+    z-index:1000;
 }
 
-body.dark-mode .overview-image{
-    box-shadow:
-    0 15px 35px rgba(0,0,0,.35);
+.scroll-top-btn.show{
+    opacity:1;
+    visibility:visible;
 }
 
-body.dark-mode .overview-content p,
-body.dark-mode .feature-content p,
-body.dark-mode .tech-content p,
-body.dark-mode .process-content p,
-body.dark-mode .service-features li{
-    color:var(--text-light);
+.scroll-top-btn:hover{
+    transform:translateY(-4px);
 }
 
-body.dark-mode .pricing-card.highlight{
-    border-color:var(--primary);
-}
+/* =========================================================
+   LIGHT MODE FIXES
+========================================================= */
 
-body.dark-mode .cta-simple{
+body:not(.dark-mode) .cta-simple{
     background:
     linear-gradient(
         135deg,
-        #1b5e20,
-        #2e7d32
+        var(--primary),
+        var(--primary-soft)
     );
 }
 
-/* ==========================================
-   BENEFITS & USE CASES
-========================================== */
-
-.benefits-section .card,
-.grid-2 .card{
-    text-align:center;
-    padding:35px 30px;
+body:not(.dark-mode) .cta-simple .btn-secondary{
+    color:#fff;
 }
 
-.benefits-section .card h3,
-.grid-2 .card h3{
-    margin-bottom:25px;
-    color:var(--primary);
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+body.dark-mode .hero{
+    background:
+    linear-gradient(
+        rgba(0,0,0,.7),
+        rgba(0,0,0,.7)
+    ),
+    url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1600&q=80");
 }
 
-.service-features{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:14px;
-
-    margin-top:20px;
-    padding:0;
+body.dark-mode .hero-tag,
+body.dark-mode .stat-item{
+    background:rgba(255,255,255,.08);
 }
 
-.service-features li{
-    display:flex;
-    align-items:center;
-    gap:12px;
-
-    min-width:240px;
-    max-width:320px;
-
-    text-align:left;
-    color:var(--text-light);
-
-    font-size:0.95rem;
-}
-
-.service-features li i{
-    color:var(--primary);
-    flex-shrink:0;
-    font-size:1rem;
-}
-
-
-
-.grid-2 .card:hover{
-    transform:translateY(-5px);
-}
-
-
-
-body.dark-mode .grid-2 .card{
-    background:var(--secondary-soft);
-    border-color:var(--border);
-}
-
-body.dark-mode .service-features li{
-    color:var(--text-light);
-}
-/* ==========================================
-   SECTION SPACING IMPROVEMENTS
-========================================== */
-
-.section{
-    padding:100px 0;
-}
-
-.section h2{
-    margin-bottom:25px;
-}
-
-.section-subtitle{
-    margin:15px auto 50px;
-}
-
-/* ==========================================
-   OVERVIEW CONTENT
-========================================== */
-
-.overview-content{
-    padding:20px;
-}
-
-.overview-content h2{
-    margin-bottom:25px;
-}
-
-.overview-content h3{
-    margin-top:30px;
-    margin-bottom:15px;
-}
-
-.overview-content p{
-    margin-bottom:18px;
-}
-
-/* ==========================================
-   FEATURES
-========================================== */
-
-.feature-content{
-    padding:30px;
-}
-
-.feature-content h3{
-    margin-bottom:15px;
-}
-
-.feature-content p{
-    line-height:1.7;
-}
-
-/* ==========================================
-   TECHNOLOGY
-========================================== */
-
-.tech-content{
-    padding:30px;
-}
-
-.tech-content h3{
-    margin-bottom:15px;
-}
-
-/* ==========================================
-   PROCESS
-========================================== */
-
-.process-content{
-    padding:30px;
-}
-
-.process-content h3{
-    margin-bottom:15px;
-}
-
-/* ==========================================
-   BENEFITS & USE CASES
-========================================== */
-
-.center-title{
-    text-align:center;
-    margin-bottom:30px;
-}
-
-.centered-features{
-    max-width:300px;
-    margin:0 auto;
-}
-
-.centered-features li{
-    padding:8px 0;
-}
-
-/* ==========================================
-   PRICING
-========================================== */
-
-.pricing-card{
-    padding:40px 30px;
-}
-
-.pricing-card h3{
-    margin-bottom:15px;
-}
-
-.pricing-card h2{
-    margin-bottom:20px;
-}
-
-.pricing-card p{
-    margin-bottom:25px;
-}
-
-.pricing-card .btn{
-    margin-top:10px;
-}
-
-/* ==========================================
-   CTA
-========================================== */
-
-.cta-simple{
-    padding:120px 20px;
-}
-
-.cta-simple h2{
-    margin-bottom:20px;
-}
-
-.cta-simple p{
-    margin-bottom:35px;
-}
-
-/* ==========================================
-   CARD SPACING
-========================================== */
-
-.card{
-    padding:30px;
-}
-
-.feature-card,
-.tech-card,
-.process-card{
-    padding:0;
-}
-/* ==========================================
-   RESPONSIVE DESIGN
-========================================== */
-
-/* ==========================================
-   LARGE DESKTOP (>1280px)
-========================================== */
-
-@media (min-width:1281px){
-
-    .container{
-        max-width:1280px;
-        margin:auto;
-    }
-
-    .hero-content{
-        max-width:950px;
-    }
-
-    .gallery-item img{
-        height:320px;
-    }
-
-    .comparison-card img{
-        height:480px;
-    }
-}
-
-/* ==========================================
-   DESKTOP (1024px - 1280px)
-========================================== */
-
-@media (min-width:1024px) and (max-width:1280px){
-
-    .grid-2{
-        gap:50px;
-    }
-
-    .grid-3{
-        grid-template-columns:repeat(3,1fr);
-    }
-
-    .grid-4{
-        grid-template-columns:repeat(4,1fr);
-    }
-
-    .gallery-grid{
-        grid-template-columns:repeat(3,1fr);
-    }
-}
-
-/* ==========================================
-   TABLET (640px - 1024px)
-========================================== */
-
-@media (min-width:640px) and (max-width:1023px){
-
-    .hero-premium{
-        min-height:auto;
-        padding:120px 20px 80px;
-    }
-
-    .hero-content{
-        max-width:700px;
-    }
-
-    .hero-buttons{
-        justify-content:center;
-    }
-
-    .grid-2,
-    .overview-section{
-        grid-template-columns:1fr;
-        gap:40px;
-    }
-
-    .grid-3{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .grid-4{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .gallery-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .check-list{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .feature-list{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .overview-image img{
-        height:350px;
-    }
-
-    .comparison-card img{
-        height:350px;
-    }
-
-    .newsletter-form{
-        flex-direction:column;
-    }
-
-    .newsletter-form button{
-        width:100%;
-    }
-}
-
-/* ==========================================
+/* =========================================================
    MOBILE (<640px)
-========================================== */
+========================================================= */
 
 @media (max-width:639px){
 
-    .hero-premium{
-        min-height:auto;
-        padding:110px 15px 70px;
+    .hero{
+        padding:90px 0;
     }
 
-    .hero-content h1{
-        font-size:2rem;
+    .hero-stats,
+    .grid-2,
+    .grid-3,
+    .grid-4,
+    .overview-section{
+        grid-template-columns:1fr;
     }
 
-    .hero-content p{
-        font-size:.95rem;
+    .hero h1{
+        font-size:2.4rem;
     }
 
-    .hero-buttons{
-        flex-direction:column;
-        gap:15px;
+    .overview-image img,
+    .feature-card img,
+    .tech-card img{
+        height:250px;
+    }
+
+    .faq-question{
+        padding:20px;
+    }
+
+    .faq-answer{
+        padding:0 20px;
+    }
+
+    .cta-simple{
+        padding:90px 20px;
     }
 
     .hero-buttons .btn{
         width:100%;
     }
+}
 
-    .hero-features{
-        flex-direction:column;
-        gap:12px;
+/* =========================================================
+   TABLET (640px–1024px)
+========================================================= */
+
+@media (min-width:640px) and (max-width:1024px){
+
+    .overview-section{
+        grid-template-columns:1fr;
     }
 
-    .grid-2,
+    .hero-stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+
     .grid-3,
-    .grid-4,
-    .overview-section,
-    .gallery-grid{
-        grid-template-columns:1fr;
-    }
-
-    .check-list,
-    .feature-list{
-        grid-template-columns:1fr;
+    .grid-4{
+        grid-template-columns:repeat(2,1fr);
     }
 
     .overview-image img{
-        height:250px;
+        height:420px;
+    }
+}
+
+/* =========================================================
+   DESKTOP (1024px–1280px)
+========================================================= */
+
+@media (min-width:1024px) and (max-width:1280px){
+
+    .hero h1{
+        font-size:2rem;
     }
 
-    .gallery-item img{
-        height:220px;
+    .overview-image img{
+        height:460px;
+    }
+}
+
+/* =========================================================
+   LARGE (>1280px)
+========================================================= */
+
+@media (min-width:1281px){
+
+    .hero h1{
+        font-size:4.5rem;
     }
 
-    .comparison-card img{
-        height:250px;
+    .container{
+        max-width:1280px;
+    }
+}/* ==========================================
+   SECTION SPACING FIX
+========================================== */
+
+.section,
+.technology-section,
+.faq-section {
+    padding: 70px 0;
+}
+
+/* CTA can remain slightly larger */
+.cta-simple{
+    padding: 90px 0;
+}
+
+/* Remove excessive container padding */
+.section .container,
+.technology-section .container,
+.faq-section .container{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Reduce heading spacing */
+.text-center{
+    margin-bottom: 40px;
+}
+
+.text-center h2{
+    margin: 12px 0;
+}
+
+.text-center p{
+    margin: 0 auto;
+    max-width: 700px;
+    padding: 0;
+}
+
+/* Overview section spacing */
+.overview-content p{
+    margin-bottom: 16px;
+}
+
+.overview-content h2{
+    margin-bottom: 18px;
+}
+
+/* Feature cards */
+.feature-content{
+    padding: 24px;
+}
+
+.feature-content h3{
+    margin-bottom: 12px;
+}
+
+.feature-content p{
+    margin-bottom: 0;
+}
+
+/* Process cards */
+.process-card h3{
+    margin: 15px 0 10px;
+}
+
+.process-card p{
+    margin-bottom: 0;
+}
+
+/* FAQ */
+.faq-wrapper{
+    margin-top: 30px;
+}
+
+.faq-question{
+    padding: 20px 25px;
+}
+
+.faq-answer p{
+    padding-bottom: 20px;
+    margin: 0;
+}
+
+/* =========================================================
+   DARK MODE IMPROVEMENTS
+========================================================= */
+
+body.dark-mode section,
+body.dark-mode main {
+    background: var(--light);
+}
+
+/* Hero */
+
+body.dark-mode .hero {
+    background:
+        linear-gradient(
+            rgba(0,0,0,.75),
+            rgba(0,0,0,.75)
+        ),
+        url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1600&q=80");
+    background-size: cover;
+    background-position: center;
+}
+
+body.dark-mode .hero-tag {
+    background: rgba(255,255,255,.08);
+    color: #ffffff;
+}
+
+body.dark-mode .hero h1,
+body.dark-mode .hero p {
+    color: #ffffff;
+}
+
+/* Cards */
+
+body.dark-mode .card,
+body.dark-mode .faq-item,
+body.dark-mode .feature-card,
+body.dark-mode .tech-card,
+body.dark-mode .process-card {
+    background: var(--soft);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+}
+
+body.dark-mode .card:hover {
+    border-color: var(--primary);
+}
+
+/* Text */
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+    color: #ffffff;
+}
+
+body.dark-mode p,
+body.dark-mode li,
+body.dark-mode .faq-answer p {
+    color: var(--text-light);
+}
+
+/* Section Badge */
+
+body.dark-mode .section-badge {
+    color: var(--primary);
+}
+
+body.dark-mode .section-badge::before,
+body.dark-mode .section-badge::after {
+    background: var(--primary);
+}
+
+/* Feature Icons */
+
+body.dark-mode .service-features i {
+    color: var(--primary);
+}
+
+/* FAQ */
+
+body.dark-mode .faq-question {
+    background: var(--soft);
+    color: #ffffff;
+}
+
+body.dark-mode .faq-answer {
+    background: rgba(255,255,255,.03);
+}
+
+/* Hero Stats */
+
+body.dark-mode .stat-item {
+    background: rgba(255,255,255,.05);
+    border: 1px solid rgba(255,255,255,.08);
+}
+
+body.dark-mode .stat-item h3 {
+    color: #ffffff;
+}
+
+body.dark-mode .stat-item p {
+    color: rgba(255,255,255,.75);
+}
+
+/* CTA */
+
+body.dark-mode .cta-simple {
+    background:
+        linear-gradient(
+            135deg,
+            #0d3d16,
+            #1b5e20
+        );
+}
+
+body.dark-mode .cta-simple h2,
+body.dark-mode .cta-simple p {
+    color: #ffffff;
+    padding: 10px;
+}
+
+body.dark-mode .cta-simple .btn-primary {
+    background: #ffffff;
+    color: var(--primary);
+}
+
+body.dark-mode .cta-simple .btn-secondary {
+    border: 2px solid rgba(255,255,255,.5);
+    color: #ffffff;
+}
+
+body.dark-mode .cta-simple .btn-secondary:hover {
+    background: #ffffff;
+    color: var(--primary);
+}
+
+/* Scroll Top */
+
+body.dark-mode .scroll-top-btn {
+    background: var(--primary);
+    color: #ffffff;
+}
+
+/* =========================================================
+   RESPONSIVE SECTION PADDING
+========================================================= */
+
+/* Mobile */
+
+@media (max-width: 639px) {
+
+    .section,
+    .faq-section,
+    .technology-section,
+    .cta-simple {
+        padding: 70px 0;
     }
 
-    .blog-card img,
-    .cert-card img,
-    .feature-card img,
-    .tech-card img,
-    .process-card img{
-        height:180px;
+    .text-center {
+        margin-bottom: 40px;
     }
 
-    .team-card img{
-        width:110px;
-        height:110px;
+    .overview-content p,
+    .feature-content p,
+    .process-card p,
+    .faq-answer p {
+        margin-bottom: 16px;
+    }
+}
+
+/* Tablet */
+
+@media (min-width: 640px) and (max-width: 1024px) {
+
+    .section,
+    .faq-section,
+    .technology-section,
+    .cta-simple {
+        padding: 85px 0;
     }
 
-    .newsletter-card{
-        padding:35px 20px;
+    .text-center {
+        margin-bottom: 50px;
+    }
+}
+
+/* Desktop */
+
+@media (min-width: 1024px) {
+
+    .section,
+    .faq-section,
+    .technology-section,
+    .cta-simple {
+        padding: 50px 0;
+    }
+}/* ==========================================
+   PRICING SECTION
+========================================== */
+
+.pricing-card {
+    position: relative;
+    text-align: center;
+    padding: 45px 35px;
+    border-radius: 24px;
+    overflow: hidden;
+    transition: all 0.35s ease;
+
+    background: var(--light);
+    border: 1px solid var(--border);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 420px;
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+
+    border-color: var(--primary);
+
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Highlight Plan */
+
+.pricing-card.highlight {
+    border: 2px solid var(--primary);
+
+    transform: scale(1.03);
+
+    box-shadow:
+        0 20px 40px rgba(27, 94, 32, 0.15);
+}
+
+.pricing-card.highlight::before {
+    content: "POPULAR";
+
+    position: absolute;
+    top: 18px;
+    right: -35px;
+
+    width: 140px;
+
+    padding: 8px 0;
+
+    background: var(--primary);
+
+    color: #fff;
+
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-align: center;
+
+    transform: rotate(45deg);
+
+    box-shadow: 0 4px 12px rgba(0,0,0,.15);
+}
+
+/* Plan Name */
+
+.pricing-card h3 {
+    color: var(--primary);
+
+    font-size: 1.5rem;
+
+    margin-bottom: 20px;
+}
+
+/* Price */
+
+.pricing-card h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+
+    color: var(--text);
+
+    margin-bottom: 20px;
+
+    line-height: 1.2;
+}
+
+/* Description */
+
+.pricing-card p {
+    color: var(--text-light);
+
+    margin-bottom: 35px;
+
+    flex-grow: 1;
+
+    padding: 0 10px;
+}
+
+/* Button */
+
+.pricing-card .btn {
+    width: 100%;
+    justify-content: center;
+}
+
+/* ==========================================
+   LIGHT MODE
+========================================== */
+
+body:not(.dark-mode) .pricing-card {
+    background: #ffffff;
+}
+
+body:not(.dark-mode) .pricing-card:hover {
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.10);
+}
+
+/* ==========================================
+   DARK MODE
+========================================== */
+
+body.dark-mode .pricing-card {
+    background: var(--soft);
+
+    border-color: var(--border);
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,.35);
+}
+
+body.dark-mode .pricing-card:hover {
+    border-color: var(--primary);
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.5);
+}
+
+body.dark-mode .pricing-card h2 {
+    color: var(--text-light);
+}
+
+body.dark-mode .pricing-card h3 {
+    color: var(--primary);
+}
+
+body.dark-mode .pricing-card.highlight {
+    border-color: var(--accent);
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.55);
+}
+
+body.dark-mode .pricing-card.highlight::before {
+    background: var(--accent);
+    color: var(--secondary);
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+/* Mobile */
+
+@media (max-width: 639px) {
+
+    .pricing-card {
+        min-height: auto;
+
+        padding: 35px 25px;
     }
 
-    .newsletter-form{
-        flex-direction:column;
+    .pricing-card.highlight {
+        transform: none;
     }
 
-    .newsletter-form button{
-        width:100%;
+    .pricing-card h2 {
+        font-size: 2rem;
     }
 
-    .section-title h2{
-        font-size:1.8rem;
+    .pricing-card.highlight::before {
+        top: 16px;
+        right: -42px;
+
+        width: 140px;
+
+        font-size: 0.7rem;
+    }
+}
+
+/* Tablet */
+
+@media (min-width: 640px) and (max-width: 1024px) {
+
+    .pricing-card {
+        min-height: 390px;
     }
 
-    .cta{
-        padding:90px 20px;
+    .pricing-card h2 {
+        font-size: 2.2rem;
     }
+}
+
+/* Desktop */
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+
+    .pricing-card {
+        min-height: 410px;
+    }
+}
+
+/* Large Screens */
+
+@media (min-width: 1280px) {
+
+    .pricing-card {
+        min-height: 430px;
+    }
+}/* =========================
+   BENEFITS SECTION (IMAGES)
+========================= */
+
+.section .grid-2 .card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+/* image styling */
+.section .grid-2 .card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+/* hover effect on card */
+.section .grid-2 .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* image zoom on hover */
+.section .grid-2 .card:hover img {
+    transform: scale(1.05);
+}
+
+/* headings */
+.section .grid-2 .card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 10px;
+    color: #1f2937;
+}
+
+/* list reset */
+.section .grid-2 .card ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+/* list items */
+.section .grid-2 .card ul li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 0;
+    font-size: 14px;
+    color: #444;
+}
+
+/* icons */
+.section .grid-2 .card ul li i {
+    color: #2e7d32;
+    font-size: 14px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+    .section .grid-2 {
+        grid-template-columns: 1fr;
+    }
+
+    .section .grid-2 .card img {
+        height: 180px;
+    }
+}/* =========================
+   BENEFITS DARK MODE FIX
+========================= */
+
+body.dark-mode .section .grid-2 .card {
+    background: var(--soft);
+    border: 1px solid var(--border);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+body.dark-mode .section .grid-2 .card h3 {
+    color: #ffffff;
+}
+
+body.dark-mode .section .grid-2 .card ul li {
+    color: var(--text-light);
+}
+
+body.dark-mode .section .grid-2 .card ul li i {
+    color: var(--primary);
+}
+
+/* image dark mode effect */
+body.dark-mode .section .grid-2 .card img {
+    filter: brightness(0.75) contrast(1.1);
+}/* =========================================================
+   CARD HOVER GLOW EFFECT (ALL SECTIONS)
+========================================================= */
+
+.card {
+    transition: all 0.35s ease;
+    position: relative;
+}
+
+/* LIGHT MODE GLOW */
+body:not(.dark-mode) .card:hover {
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.12),
+        0 0 0 1px rgba(46, 125, 50, 0.08);
+}
+
+/* SOFT GREEN GLOW ACCENT */
+body:not(.dark-mode) .card:hover {
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.15),
+        0 0 20px rgba(46, 125, 50, 0.25);
+}
+
+/* DARK MODE GLOW */
+body.dark-mode .card:hover {
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.6),
+        0 0 25px rgba(46, 204, 113, 0.25);
+}
+
+/* OPTIONAL: subtle border glow */
+body.dark-mode .card:hover,
+body:not(.dark-mode) .card:hover {
+    border-color: var(--primary);
+}
+
+/* IMAGE SMOOTH ZOOM FIX (prevents harsh jump) */
+.card img {
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+/* BETTER LIFT EFFECT */
+.card:hover {
+    transform: translateY(-8px);
 }

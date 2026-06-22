@@ -391,17 +391,15 @@ color: var(--primary);
     display:flex;
     gap:10px;
 }
-
 .social-btn{
     flex:1;
-
     height:46px;
 
     border:1px solid var(--border);
     border-radius:12px;
 
     background:var(--primary);
-    color:white;
+    color:#fff;
 
     cursor:pointer;
 
@@ -413,16 +411,25 @@ color: var(--primary);
     font-size:.85rem;
     font-weight:600;
 
-    transition:var(--transition);
+    transition:all .3s ease;
 }
 
 .social-btn:hover{
-    border-color:var(--primary);
-    color:var(--primary);
+    background:var(--primary-hover);
+    color:#fff;                 /* Keep text white */
+    border-color:var(--primary-hover);
+
+    transform:translateY(-4px);
+
+    box-shadow:0 12px 25px rgba(27,94,32,.25);
 }
 
 .social-btn i{
-    font-size:1rem;
+    transition:transform .3s ease;
+}
+
+.social-btn:hover i{
+    transform:scale(1.15);
 }
 
 /* ==========================================================

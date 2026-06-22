@@ -111,7 +111,7 @@ html {
 }
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+   font-family: "Manrope", sans-serif;
   background: var(--light);
   color: var(--text);
   line-height: 1.6;
@@ -169,12 +169,9 @@ select {
    TYPOGRAPHY
 ========================================================= */
 
-  h3, h4, h5 {
-  line-height: 1.2;
-  font-weight: 700;
-}
+
 h1{
-  font-size: 2.2rem;
+  font-size: 2.5rem;
 }
 h2{
   font-size: 1.5rem;
@@ -182,7 +179,17 @@ h2{
 p {
   color: var(--text-light);
 }
-
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Manrope", sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
 /* =========================================================
    GRID SYSTEM
 ========================================================= */
@@ -802,9 +809,6 @@ body.dark-mode .btn {
    DARK MODE
 ========================================================= */
 
-body.dark-mode .card{
-    border-color: rgba(255,255,255,.12);
-}
 .section-badge{
     display: inline-flex;
     align-items: center;

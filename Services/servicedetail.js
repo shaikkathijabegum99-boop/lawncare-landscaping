@@ -1,78 +1,62 @@
 
 
+        document.addEventListener("DOMContentLoaded", () => {
 
+            /* FAQ Accordion */
 
+            const faqItems = document.querySelectorAll(".faq-item");
 
+            faqItems.forEach(item => {
 
+                const question = item.querySelector(".faq-question");
 
+                question.addEventListener("click", () => {
 
+                    faqItems.forEach(faq => {
 
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener("click", (e) => {
-        const targetId = link.getAttribute("href");
+                        if (faq !== item) {
 
-        if (targetId.length > 1) {
-            const target = document.querySelector(targetId);
+                            faq.classList.remove("active");
 
-            if (target) {
-                e.preventDefault();
+                        }
 
-                target.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
+                    });
+
+                    item.classList.toggle("active");
+
                 });
-            }
-        }
-    });
-});
+
+            });
 
 
+            /* Scroll To Top */
 
+            const scrollBtn = document.getElementById("scrollTopBtn");
 
+            window.addEventListener("scroll", () => {
 
-document.querySelectorAll(".cta .btn, .cta-simple .btn").forEach(btn => {
-    btn.addEventListener("click", () => {
-        btn.classList.add("clicked");
+                if (window.scrollY > 400) {
 
-        setTimeout(() => {
-            btn.classList.remove("clicked");
-        }, 200);
-    });
-});
+                    scrollBtn.classList.add("show");
 
+                } else {
 
+                    scrollBtn.classList.remove("show");
 
+                }
 
+            });
 
-const pricingCards = document.querySelectorAll(".pricing-card");
+            scrollBtn.addEventListener("click", () => {
 
-pricingCards.forEach(card => {
-    card.addEventListener("mouseenter", () => {
-        pricingCards.forEach(c => c.classList.remove("focus"));
-        card.classList.add("focus");
-    });
+                window.scrollTo({
 
-    card.addEventListener("mouseleave", () => {
-        card.classList.remove("focus");
-    });
-});
+                    top: 0,
+                    behavior: "smooth"
 
+                });
 
+            });
 
+        });
 
-
-const revealItems = document.querySelectorAll(
-    ".section, .card, .pricing-card, .cta-simple"
-);
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-        }
-    });
-}, {
-    threshold: 0.15
-});
-
-revealItems.forEach(el => observer.observe(el));

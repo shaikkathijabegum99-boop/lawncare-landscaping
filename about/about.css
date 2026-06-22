@@ -794,4 +794,118 @@ body.dark-mode .timeline-section{
         #0f1711 0%,
         #16231a 100%
     );
+}/* ==========================================
+   PREMIUM CARD HOVER (NO GRADIENT)
+========================================== */
+
+.mission-card,
+.why-card,
+.team-card,
+.stat-box,
+.timeline-content{
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+}
+
+/* Hover Effect */
+.mission-card:hover,
+.why-card:hover,
+.team-card:hover,
+.stat-box:hover,
+.timeline-content:hover{
+    transform: translateY(-10px);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.12),
+        0 0 15px rgba(34,139,34,.18);
+}
+
+/* Team Image */
+.team-card img{
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+}
+
+.team-card:hover img{
+    transform: scale(1.05);
+
+    box-shadow:
+        0 0 15px rgba(34,139,34,.20);
+}
+
+/* Why Icons */
+.why-content i{
+    transition: all .35s ease;
+}
+
+.why-card:hover .why-content i{
+    transform: scale(1.12);
+    color: var(--primary);
+}
+
+/* Stats Numbers */
+.stat-box h2{
+    transition: all .35s ease;
+}
+
+.stat-box:hover h2{
+    color: var(--primary);
+}
+
+/* Timeline */
+.timeline-content:hover{
+    border: 1px solid rgba(34,139,34,.25);
+}
+
+.timeline-content h3{
+    transition: color .35s ease;
+}
+
+.timeline-content:hover h3{
+    color: var(--primary);
+}
+
+/* ==========================================
+   DARK MODE
+========================================== */
+
+body.dark-mode .mission-card:hover,
+body.dark-mode .why-card:hover,
+body.dark-mode .team-card:hover,
+body.dark-mode .stat-box:hover,
+body.dark-mode .timeline-content:hover{
+    box-shadow:
+        0 20px 40px rgba(0,0,0,.35),
+        0 0 18px rgba(34,139,34,.20);
+}/* ==========================================
+   PREMIUM CARD BORDER
+========================================== */
+
+.mission-card,
+.why-card,
+.team-card,
+.stat-box,
+.timeline-content{
+    border: 1px solid transparent;
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+}
+
+/* Hover Border */
+.mission-card:hover,
+.why-card:hover,
+.team-card:hover,
+.stat-box:hover,
+.timeline-content:hover{
+    border-color: rgba(34,139,34,.35);
+
+    transform: translateY(-10px);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.12),
+        0 0 15px rgba(34,139,34,.18);
 }
