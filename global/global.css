@@ -832,9 +832,6 @@ body.dark-mode .btn {
 }
 
 
-body.dark-mode .section-badge::before,
-body.dark-mode .section-badge::after{
-    background: var(--accent);
-}
+
 
 
