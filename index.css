@@ -80,7 +80,7 @@
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:60px;
-    align-items:center;
+  
 }
 
 /* ==========================================
@@ -226,7 +226,7 @@
 
 .hero-img-large img{
     width: 100%;
-    height: 520px;
+    height: 400px;
 
     object-fit: cover;
 
@@ -1338,7 +1338,7 @@ body.dark-mode .section-badge::before{
     }
 
     .hero-img-large img{
-        height:500px;
+        height:400px;
     }
 }
 
@@ -1764,4 +1764,49 @@ body.dark-mode .trust-grid div::before{
             rgba(76,175,80,.22),
             transparent 70%
         );
+}/* ==========================================
+   TESTIMONIAL CARD ALIGNMENT FIX
+========================================== */
+
+.testimonial-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    height: 100%;
+}
+
+.testimonial-card img{
+    margin: 0 auto 20px;
+}
+
+.testimonial-card p{
+    flex: 1;                 /* Equal height text area */
+    display: flex;
+    align-items: center;     /* Vertically center review text */
+    justify-content: center;
+    text-align: center;
+
+    margin: 0 0 20px;
+    line-height: 1.8;
+    color: var(--text-light);
+}
+
+.testimonial-card h4{
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--text);
+}
+
+.testimonial-card span{
+    display: block;
+    margin-top: 6px;
+    color: var(--text-light);
+    font-size: .9rem;
+}
+
+/* Equal card heights */
+.testimonial-card{
+    min-height: 430px;
 }
