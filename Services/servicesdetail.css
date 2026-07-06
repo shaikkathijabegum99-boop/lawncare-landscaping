@@ -424,9 +424,7 @@ body:not(.dark-mode) .cta-simple{
     );
 }
 
-body:not(.dark-mode) .cta-simple .btn-secondary{
-    color:#fff;
-}
+
 
 /* =========================================================
    DARK MODE
