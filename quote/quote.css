@@ -482,7 +482,7 @@ body.dark-mode .cta{
 
 .cta .btn:hover{
     transform: translateY(-3px);
-    color: white;
+   
 }
 
 .section-badge{
