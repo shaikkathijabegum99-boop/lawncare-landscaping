@@ -743,11 +743,7 @@ body.dark-mode .cta-simple {
         );
 }
 
-body.dark-mode .cta-simple h2,
-body.dark-mode .cta-simple p {
-    color: #ffffff;
-    padding: 10px;
-}
+
 
 body.dark-mode .cta-simple .btn-primary {
     background: #ffffff;
@@ -1191,4 +1187,31 @@ body:not(.dark-mode) .card:hover {
 /* BETTER LIFT EFFECT */
 .card:hover {
     transform: translateY(-8px);
+}/* ==========================
+   SERVICE FEATURES SPACING
+========================== */
+
+.service-features {
+    margin-bottom: 32px;
+}
+
+.service-features li {
+    margin-bottom: 14px;
+}
+
+.service-features li:last-child {
+    margin-bottom: 0;
+}
+
+/* Space above button */
+.service-buttons,
+.service-btn,
+.service-card .primary-btn {
+    margin-top: 30px;
+}
+
+/* If button is directly after features */
+.service-features + .primary-btn,
+.service-features + .secondary-btn {
+    margin-top: 30px;
 }
